@@ -15,11 +15,11 @@ import javax.swing.tree.DefaultTreeModel;
  */
 public class Persona {
 
-    protected int Edad;
+    protected String Nombre;
     protected String ID;
+    protected int Edad;
     protected String Nacionalidad;
     protected String LugarDeNacimiento;
-    protected String Nombre;
     protected DefaultTreeModel ArbolGenealogico;
     protected Color ColorDePiel;
     protected ArrayList<Familiar> Familiares = new ArrayList();

@@ -32,7 +32,7 @@ public class Jefe extends Persona {
 
     public Jefe(String SeccionDeTrabajo, int ClientesAtendidos, float GananciaTotal, int Edad, String ID, String Nacionalidad, String LugarDeNacimiento, String Nombre, DefaultTreeModel ArbolGenealogico, Color ColorDePiel) {
         super(Edad, ID, Nacionalidad, LugarDeNacimiento, Nombre, ArbolGenealogico, ColorDePiel);
-        this.SeccionDeTrabajo = SeccionDeTrabajo;
+        setSeccionDeTrabajo(SeccionDeTrabajo);
         this.ClientesAtendidos = ClientesAtendidos;
         this.GananciaTotal = GananciaTotal;
     }
@@ -42,7 +42,10 @@ public class Jefe extends Persona {
     }
 
     public void setSeccionDeTrabajo(String SeccionDeTrabajo) {
-        this.SeccionDeTrabajo = SeccionDeTrabajo;
+        if (SeccionDeTrabajo.equalsIgnoreCase("Venta de baleadas")||
+                SeccionDeTrabajo.equalsIgnoreCase("Venta de gatos")) {
+            this.SeccionDeTrabajo = SeccionDeTrabajo;
+        }
     }
 
     public ArrayList<Empleado> getEmpleados() {
