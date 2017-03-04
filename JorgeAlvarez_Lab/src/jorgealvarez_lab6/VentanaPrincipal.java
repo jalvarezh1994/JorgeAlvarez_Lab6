@@ -16,6 +16,9 @@ import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 
 /**
  *
@@ -23,9 +26,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    JColorChooser jcc = new JColorChooser();
-    
-    
     /**
      * Creates new form VentanaPrincipal
      */
@@ -161,10 +161,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         AgregarBaleadaAgregarBaleadaBt = new javax.swing.JButton();
         NuevaVenta = new javax.swing.ButtonGroup();
         Reportes = new javax.swing.ButtonGroup();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        PrincipalTp = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        ArbolInicio = new javax.swing.JTree();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         JefeAgregarBt = new javax.swing.JButton();
@@ -856,9 +856,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        PrincipalTp.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                PrincipalTpStateChanged(evt);
+            }
+        });
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Carpetas de datos");
+        ArbolInicio.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(ArbolInicio);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -867,17 +873,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(492, Short.MAX_VALUE))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Inicio", jPanel1);
+        PrincipalTp.addTab("Inicio", jPanel1);
 
         jLabel1.setText("Agregar Personas");
 
@@ -965,7 +971,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                     .addComponent(jLabel67))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -999,7 +1005,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(313, 313, 313))))
         );
 
-        jTabbedPane1.addTab("Agregar", jPanel2);
+        PrincipalTp.addTab("Agregar", jPanel2);
 
         jLabel4.setText("Personas");
 
@@ -1084,7 +1090,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(BaleadasListarRb))
                             .addComponent(jLabel5))))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1102,11 +1108,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(GatosListarRb)
                     .addComponent(BaleadasListarRb))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Listar", jPanel5);
+        PrincipalTp.addTab("Listar", jPanel5);
 
         jLabel6.setText("Personas");
 
@@ -1197,7 +1203,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BaleadasModificarRb))
                     .addComponent(jLabel7))
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1219,10 +1225,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(ComboBoxModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ActualizarControlesModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EliminarModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(496, Short.MAX_VALUE))
+                .addContainerGap(448, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Modificar", jPanel3);
+        PrincipalTp.addTab("Modificar", jPanel3);
 
         jLabel63.setText("Artículo");
 
@@ -1285,7 +1291,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(EmpleadoNuevaVentaCb, 0, 147, Short.MAX_VALUE)
                             .addComponent(ClienteNuevaVentaCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1330,7 +1336,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(ArticuloNuevaVentaCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(AgregarAlCarroNuevaVentaBt)))
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Nueva venta", jPanel6);
@@ -1361,7 +1367,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1373,7 +1379,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jRadioButton4))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Reportes", jPanel7);
@@ -1395,7 +1401,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Venta", jPanel4);
+        PrincipalTp.addTab("Venta", jPanel4);
 
         jMenu1.setText("Archivo");
 
@@ -1434,15 +1440,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(PrincipalTp, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(PrincipalTp, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1475,7 +1481,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void JefeAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JefeAgregarBtActionPerformed
         // TODO add your handling code here:
-        Modificar=0;
+        Modificar = 0;
         EmpleadosTemporal.clear();
         AgregarJefe.setVisible(true);
         AgregarJefe.pack();
@@ -1609,7 +1615,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void ClienteAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteAgregarBtActionPerformed
         // TODO add your handling code here:
-        Modificar=0;
+        Modificar = 0;
         AgregarCliente.setVisible(true);
         AgregarCliente.pack();
         AgregarCliente.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -1658,7 +1664,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void FamiliarAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FamiliarAgregarBtActionPerformed
         // TODO add your handling code here:
-        Modificar=0;
+        Modificar = 0;
         FamiliaresTemporal.clear();
         AgregarFamiliar.setVisible(true);
         AgregarFamiliar.pack();
@@ -1675,7 +1681,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void GatoAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GatoAgregarBtActionPerformed
         // TODO add your handling code here:
-        Modificar=0;
+        Modificar = 0;
         AgregarGato.setVisible(true);
         AgregarGato.pack();
         AgregarGato.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -1683,7 +1689,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void EmpleadoAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadoAgregarBtActionPerformed
         // TODO add your handling code here:
-        Modificar=0;
+        Modificar = 0;
         AgregarEmpleado.setVisible(true);
         AgregarEmpleado.pack();
         AgregarEmpleado.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -1693,7 +1699,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         int pos = 0;
-        if (Modificar==0) {
+        if (Modificar == 0) {
             Gatos.add(new Gato());
             pos = Gatos.size() - 1;
         } else {
@@ -1730,7 +1736,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void AgregarBaleadaAgregarBaleadaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarBaleadaAgregarBaleadaBtActionPerformed
         // TODO add your handling code here:
         int pos = 0;
-        if (Modificar==0) {
+        if (Modificar == 0) {
             Baleadas.add(new Baleada());
             pos = Baleadas.size() - 1;
         } else {
@@ -1750,7 +1756,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void BaleadaAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaleadaAgregarBtActionPerformed
         // TODO add your handling code here:
-        Modificar=0;
+        Modificar = 0;
         AgregarBaleada.setVisible(true);
         AgregarBaleada.pack();
         IngredientesTemporal.clear();
@@ -2034,14 +2040,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void ActualizarControlesModificarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarControlesModificarBtActionPerformed
         // TODO add your handling code here:
-        Modificar=0;
-        int pos=ComboBoxModificar.getSelectedIndex();
+        Modificar = 0;
+        int pos = ComboBoxModificar.getSelectedIndex();
         if (JefesModificarRb.isSelected()) {
             AgregarJefe.setVisible(true);
             NombreAgregarJefeTf.setText(Jefes.get(pos).getNombre());
             IDAgregarJefeTf.setText(Jefes.get(pos).getID());
-            String Edad="";
-            Edad+=Jefes.get(pos).getEdad();
+            String Edad = "";
+            Edad += Jefes.get(pos).getEdad();
             EdadAgregarJefeTf.setText(Edad);
             NacionalidadAgregarJefeTf.setText(Jefes.get(pos).getNacionalidad());
             LugarDeNacimientoAgregarClienteTf.setText(Jefes.get(pos).getLugarDeNacimiento());
@@ -2051,8 +2057,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             AgregarEmpleado.setVisible(true);
             NombreAgregarEmpleadoTf.setText(Empleados.get(pos).getNombre());
             IDAgregarEmpleadoTf.setText(Empleados.get(pos).getID());
-            String Edad="";
-            Edad+=Empleados.get(pos).getEdad();
+            String Edad = "";
+            Edad += Empleados.get(pos).getEdad();
             EdadAgregarEmpleadoTf.setText(Edad);
             NacionalidadAgregarEmpleadoTf.setText(Empleados.get(pos).getNacionalidad());
             LugarDeNacimientoAgregarClienteTf.setText(Empleados.get(pos).getLugarDeNacimiento());
@@ -2062,8 +2068,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             AgregarCliente.setVisible(true);
             NombreAgregarClienteTf.setText(Clientes.get(pos).getNombre());
             IDAgregarClienteTf.setText(Clientes.get(pos).getID());
-            String Edad="";
-            Edad+=Clientes.get(pos).getEdad();
+            String Edad = "";
+            Edad += Clientes.get(pos).getEdad();
             EdadAgregarClienteTf.setText(Edad);
             NacionalidadAgregarClienteTf.setText(Clientes.get(pos).getNacionalidad());
             LugarDeNacimientoAgregarClienteTf.setText(Clientes.get(pos).getLugarDeNacimiento());
@@ -2073,8 +2079,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             AgregarFamiliar.setVisible(true);
             NombreAgregarFamiliarTf.setText(Familiares.get(pos).getNombre());
             IDAgregarFamiliarTf.setText(Familiares.get(pos).getID());
-            String Edad="";
-            Edad+=Familiares.get(pos).getEdad();
+            String Edad = "";
+            Edad += Familiares.get(pos).getEdad();
             EdadAgregarFamiliarTf.setText(Edad);
             NacionalidadAgregarFamiliarTf.setText(Familiares.get(pos).getNacionalidad());
             LugarDeNacimientoAgregarFamiliarTf.setText(Familiares.get(pos).getLugarDeNacimiento());
@@ -2082,14 +2088,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         if (GatosModificarRb.isSelected()) {
             AgregarGato.setVisible(true);
-            String precio="";
-            precio+=Gatos.get(pos).getPrecio();
+            String precio = "";
+            precio += Gatos.get(pos).getPrecio();
             PrecioAgregarGatoTf.setText(precio);
         }
         if (BaleadasModificarRb.isSelected()) {
             AgregarBaleada.setVisible(true);
-            String precio="";
-            precio+=Baleadas.get(pos).getPrecio();
+            String precio = "";
+            precio += Baleadas.get(pos).getPrecio();
             PrecioAgregarBaleadaTf.setText(precio);
         }
     }//GEN-LAST:event_ActualizarControlesModificarBtActionPerformed
@@ -2101,6 +2107,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (seleccion == JFileChooser.APPROVE_OPTION) {
             File dir = fileChooser.getSelectedFile();
             boolean fueCreado = dir.mkdir();
+            Directorios.add(dir);
+            DefaultTreeModel arbolModelo = new DefaultTreeModel(
+                    (TreeNode) ArbolInicio.getModel().getRoot());
+            DefaultMutableTreeNode nodo=new DefaultMutableTreeNode();
+            arbolModelo.reload(nodo);
             if (fueCreado) {
                 JOptionPane.showMessageDialog(this, "Fué creado exitosamente");
             } else {
@@ -2108,6 +2119,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_GuardarMnActionPerformed
+
+    private void PrincipalTpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PrincipalTpStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PrincipalTpStateChanged
 
     /**
      * @param args the command line arguments
@@ -2168,6 +2183,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDialog AgregarJefe;
     private javax.swing.JButton AgregarJefeAgregarJefeBt;
     private javax.swing.JTextField AlturaAgregarGatoTf;
+    private javax.swing.JTree ArbolInicio;
     private javax.swing.JComboBox<String> ArticuloNuevaVentaCb;
     private javax.swing.JButton BaleadaAgregarBt;
     private javax.swing.JRadioButton BaleadasListarRb;
@@ -2233,6 +2249,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField PesoAgregarGatoTf;
     private javax.swing.JTextField PrecioAgregarBaleadaTf;
     private javax.swing.JTextField PrecioAgregarGatoTf;
+    private javax.swing.JTabbedPane PrincipalTp;
     private javax.swing.JButton RealizarVentaNuevaVentaBt;
     private javax.swing.ButtonGroup Reportes;
     private javax.swing.JMenuItem SalirMn;
@@ -2319,10 +2336,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
     private javax.swing.JTree jTree3;
     private javax.swing.JTree jTree4;
@@ -2345,6 +2360,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     static ArrayList<Articulo> ArticulosTemporal = new ArrayList();
     static ArrayList<Venta> Ordenes = new ArrayList();
     static ArrayList<Venta> Ventas = new ArrayList();
+
+    static ArrayList Directorios = new ArrayList();
+
     static int Tickets = 0;
     static int Modificar = 0;
+    JColorChooser jcc = new JColorChooser();
+    boolean Guardar = false;
+
 }
