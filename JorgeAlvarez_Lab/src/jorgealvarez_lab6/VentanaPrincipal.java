@@ -7,6 +7,7 @@ package jorgealvarez_lab6;
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,7 +47,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         EdadAgregarJefeTf = new javax.swing.JTextField();
         NacionalidadAgregarJefeTf = new javax.swing.JTextField();
         LugarDeNacimientoAgregarJefeTf = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
+        AgregarJefeAgregarJefeBt = new javax.swing.JButton();
         ColorDePielAgregarJefeBt = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTree3 = new javax.swing.JTree();
@@ -54,7 +55,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         SeccionDeTrabajoAgregarJefeCb = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         AgregarEmpleadoAgregarJefeCb = new javax.swing.JComboBox<>();
-        jButton12 = new javax.swing.JButton();
+        AgregarEmpleadoAgregarJefeBt = new javax.swing.JButton();
         AgregarEmpleado = new javax.swing.JDialog();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -69,7 +70,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         EdadAgregarEmpleadoTf = new javax.swing.JTextField();
         NacionalidadAgregarEmpleadoTf = new javax.swing.JTextField();
         LugarDeNacimientoAgregarEmpleadoTf = new javax.swing.JTextField();
-        jButton13 = new javax.swing.JButton();
+        AgregarEmpleadoAgregarEmpleadoBt = new javax.swing.JButton();
         ColorDePielAgregarEmpleadoBt = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTree4 = new javax.swing.JTree();
@@ -97,7 +98,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         EdadAgregarClienteTf = new javax.swing.JTextField();
         NacionalidadAgregarClienteTf = new javax.swing.JTextField();
         LugarDeNacimientoAgregarClienteTf = new javax.swing.JTextField();
-        jButton15 = new javax.swing.JButton();
+        AgregarClienteAgregarClienteBt = new javax.swing.JButton();
         ColorDePielAgregarClienteBt = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTree5 = new javax.swing.JTree();
@@ -111,74 +112,73 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        NombreJefeTf3 = new javax.swing.JTextField();
-        IdJefeTf3 = new javax.swing.JTextField();
-        EdadJefeTf3 = new javax.swing.JTextField();
-        NacionalidadJefeTf3 = new javax.swing.JTextField();
-        LugarDeNacimientoTf3 = new javax.swing.JTextField();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        NombreAgregarFamiliarTf = new javax.swing.JTextField();
+        IDAgregarFamiliarTf = new javax.swing.JTextField();
+        EdadAgregarFamiliarTf = new javax.swing.JTextField();
+        NacionalidadAgregarFamiliarTf = new javax.swing.JTextField();
+        LugarDeNacimientoAgregarFamiliarTf = new javax.swing.JTextField();
+        AgregarFamiliarAgregarFamiliarBt = new javax.swing.JButton();
+        ColorDePielAgregarFamiliarBt = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jButton19 = new javax.swing.JButton();
+        FamiliarPadreAgregarFamiliarCb = new javax.swing.JComboBox<>();
+        FamiliarHijoAgregarFamiliarCb = new javax.swing.JComboBox<>();
+        AgregarFamiliarHijoAgregarFamiliarBt = new javax.swing.JButton();
         AgregarFamiliarBg = new javax.swing.ButtonGroup();
         AgregarFamiliarBg1 = new javax.swing.ButtonGroup();
         AgregarGato = new javax.swing.JDialog();
         jLabel46 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        PesoAgregarGatoTf = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton20 = new javax.swing.JButton();
+        AlturaAgregarGatoTf = new javax.swing.JTextField();
+        AgregarGatoAgregarGatoBt = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        Agregar = new javax.swing.JDialog();
+        PrecioAgregarGatoTf = new javax.swing.JTextField();
         AgregarBaleada = new javax.swing.JDialog();
         jLabel51 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
+        PrecioAgregarBaleadaTf = new javax.swing.JTextField();
+        IngredienteAgregarBaleadaTf = new javax.swing.JTextField();
+        AgregarIngredienteAgregarBaleadaBt = new javax.swing.JButton();
+        AgregarBaleadaAgregarBaleadaBt = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        JefeAgregarBt = new javax.swing.JButton();
+        EmpleadoAgregarBt = new javax.swing.JButton();
+        ClienteAgregarBt = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        FamiliarAgregarBt = new javax.swing.JButton();
+        GatoAgregarBt = new javax.swing.JButton();
+        BaleadaAgregarBt = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTree2 = new javax.swing.JTree();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        JefesListarRb = new javax.swing.JRadioButton();
+        EmpleadosListarRb = new javax.swing.JRadioButton();
+        ClientesListarRb = new javax.swing.JRadioButton();
+        FamiliaresListarRb = new javax.swing.JRadioButton();
+        GatosListarRb = new javax.swing.JRadioButton();
+        BaleadasListarRb = new javax.swing.JRadioButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TablaListar = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
+        JefesModificarRb = new javax.swing.JRadioButton();
+        EmpleadosModificarRb = new javax.swing.JRadioButton();
+        ClientesModificarRb = new javax.swing.JRadioButton();
+        FamiliaresModificarRb = new javax.swing.JRadioButton();
+        GatosModificarRb = new javax.swing.JRadioButton();
+        BaleadasModificarRb = new javax.swing.JRadioButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton7 = new javax.swing.JButton();
+        ActualizarControlesModificarBt = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton8 = new javax.swing.JButton();
@@ -206,10 +206,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel15.setText("Color de piel");
 
-        jButton10.setText("Agregar Jefe");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        AgregarJefeAgregarJefeBt.setText("Agregar Jefe");
+        AgregarJefeAgregarJefeBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                AgregarJefeAgregarJefeBtActionPerformed(evt);
             }
         });
 
@@ -221,10 +221,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel17.setText("Empleado");
 
-        jButton12.setText("Agregar Empleado");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        AgregarEmpleadoAgregarJefeBt.setText("Agregar Empleado");
+        AgregarEmpleadoAgregarJefeBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                AgregarEmpleadoAgregarJefeBtActionPerformed(evt);
             }
         });
 
@@ -257,13 +257,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addComponent(ColorDePielAgregarJefeBt, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(SeccionDeTrabajoAgregarJefeCb, 0, 200, Short.MAX_VALUE)
                         .addComponent(AgregarEmpleadoAgregarJefeCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton12))
+                    .addComponent(AgregarEmpleadoAgregarJefeBt))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(AgregarJefeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel14)
                     .addGroup(AgregarJefeLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AgregarJefeAgregarJefeBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane5))
                 .addContainerGap())
         );
@@ -280,7 +280,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AgregarJefeAgregarJefeBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(AgregarJefeLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -318,7 +318,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(AgregarEmpleadoAgregarJefeCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton12)
+                        .addComponent(AgregarEmpleadoAgregarJefeBt)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -336,10 +336,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel25.setText("Color de piel");
 
-        jButton13.setText("Agregar Empleado");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        AgregarEmpleadoAgregarEmpleadoBt.setText("Agregar Empleado");
+        AgregarEmpleadoAgregarEmpleadoBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                AgregarEmpleadoAgregarEmpleadoBtActionPerformed(evt);
             }
         });
 
@@ -398,7 +398,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel24)
                     .addGroup(AgregarEmpleadoLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AgregarEmpleadoAgregarEmpleadoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane6))
                 .addContainerGap())
         );
@@ -415,7 +415,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AgregarEmpleadoAgregarEmpleadoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(AgregarEmpleadoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -481,10 +481,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel38.setText("Color de piel");
 
-        jButton15.setText("Agregar Cliente");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        AgregarClienteAgregarClienteBt.setText("Agregar Cliente");
+        AgregarClienteAgregarClienteBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                AgregarClienteAgregarClienteBtActionPerformed(evt);
             }
         });
 
@@ -523,7 +523,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel37)
                     .addGroup(AgregarClienteLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
-                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AgregarClienteAgregarClienteBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane7))
                 .addContainerGap())
         );
@@ -540,7 +540,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AgregarClienteAgregarClienteBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(AgregarClienteLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -588,13 +588,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel47.setText("Color de piel");
 
-        jButton17.setText("Agregar Cliente");
+        AgregarFamiliarAgregarFamiliarBt.setText("Agregar Familiar");
+        AgregarFamiliarAgregarFamiliarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarFamiliarAgregarFamiliarBtActionPerformed(evt);
+            }
+        });
 
         jLabel49.setText("Familiar Padre");
 
-        jLabel50.setText("Familiares Hijos");
+        jLabel50.setText("Familiar Hijo");
 
-        jButton19.setText("Agregar Familiar Hijo");
+        AgregarFamiliarHijoAgregarFamiliarBt.setText("Agregar Familiar Hijo");
+        AgregarFamiliarHijoAgregarFamiliarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarFamiliarHijoAgregarFamiliarBtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AgregarFamiliarLayout = new javax.swing.GroupLayout(AgregarFamiliar.getContentPane());
         AgregarFamiliar.getContentPane().setLayout(AgregarFamiliarLayout);
@@ -614,29 +624,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel42))
                 .addGap(36, 36, 36)
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(NombreJefeTf3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(IdJefeTf3)
-                    .addComponent(EdadJefeTf3)
-                    .addComponent(NacionalidadJefeTf3)
-                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LugarDeNacimientoTf3))
+                    .addComponent(NombreAgregarFamiliarTf, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(IDAgregarFamiliarTf)
+                    .addComponent(EdadAgregarFamiliarTf)
+                    .addComponent(NacionalidadAgregarFamiliarTf)
+                    .addComponent(ColorDePielAgregarFamiliarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LugarDeNacimientoAgregarFamiliarTf))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarFamiliarLayout.createSequentialGroup()
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarFamiliarLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AgregarFamiliarLayout.createSequentialGroup()
+                        .addComponent(AgregarFamiliarAgregarFamiliarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarFamiliarLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel49)
                             .addComponent(jLabel50))
-                        .addGap(60, 60, 60)
-                        .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox6, 0, 200, Short.MAX_VALUE)
-                            .addComponent(jButton19)
-                            .addComponent(jComboBox7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                        .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AgregarFamiliarHijoAgregarFamiliarBt)
+                            .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FamiliarPadreAgregarFamiliarCb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FamiliarHijoAgregarFamiliarCb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         AgregarFamiliarLayout.setVerticalGroup(
@@ -645,45 +655,45 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
-                    .addComponent(NombreJefeTf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NombreAgregarFamiliarTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
-                    .addComponent(IdJefeTf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(IDAgregarFamiliarTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40)
-                    .addComponent(EdadJefeTf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EdadAgregarFamiliarTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
-                    .addComponent(NacionalidadJefeTf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NacionalidadAgregarFamiliarTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
-                    .addComponent(LugarDeNacimientoTf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LugarDeNacimientoAgregarFamiliarTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AgregarFamiliarLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel44))
                     .addGroup(AgregarFamiliarLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ColorDePielAgregarFamiliarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(AgregarFamiliarLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel47)))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FamiliarPadreAgregarFamiliarCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FamiliarHijoAgregarFamiliarCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton19)
+                .addComponent(AgregarFamiliarHijoAgregarFamiliarBt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AgregarFamiliarAgregarFamiliarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -691,7 +701,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel48.setText("Altura");
 
-        jButton20.setText("Agregar Gato");
+        AgregarGatoAgregarGatoBt.setText("Agregar Gato");
+        AgregarGatoAgregarGatoBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarGatoAgregarGatoBtActionPerformed(evt);
+            }
+        });
 
         jLabel52.setText("Precio");
 
@@ -701,7 +716,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             AgregarGatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarGatoLayout.createSequentialGroup()
                 .addContainerGap(169, Short.MAX_VALUE)
-                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AgregarGatoAgregarGatoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(AgregarGatoLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
@@ -711,9 +726,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel52))
                 .addGap(36, 36, 36)
                 .addGroup(AgregarGatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField4)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
+                    .addComponent(PesoAgregarGatoTf)
+                    .addComponent(AlturaAgregarGatoTf)
+                    .addComponent(PrecioAgregarGatoTf, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         AgregarGatoLayout.setVerticalGroup(
@@ -722,38 +737,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(AgregarGatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel52)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PrecioAgregarGatoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarGatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PesoAgregarGatoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel46))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarGatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AlturaAgregarGatoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AgregarGatoAgregarGatoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-        );
-
-        javax.swing.GroupLayout AgregarLayout = new javax.swing.GroupLayout(Agregar.getContentPane());
-        Agregar.getContentPane().setLayout(AgregarLayout);
-        AgregarLayout.setHorizontalGroup(
-            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        AgregarLayout.setVerticalGroup(
-            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         jLabel51.setText("Precio");
 
         jLabel53.setText("Ingrediente");
 
-        jButton21.setText("Agregar Ingrediente");
+        AgregarIngredienteAgregarBaleadaBt.setText("Agregar Ingrediente");
+        AgregarIngredienteAgregarBaleadaBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarIngredienteAgregarBaleadaBtActionPerformed(evt);
+            }
+        });
 
-        jButton22.setText("Agregar Baleada");
+        AgregarBaleadaAgregarBaleadaBt.setText("Agregar Baleada");
+        AgregarBaleadaAgregarBaleadaBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarBaleadaAgregarBaleadaBtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AgregarBaleadaLayout = new javax.swing.GroupLayout(AgregarBaleada.getContentPane());
         AgregarBaleada.getContentPane().setLayout(AgregarBaleadaLayout);
@@ -766,14 +780,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel53))
                 .addGap(39, 39, 39)
                 .addGroup(AgregarBaleadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton21)
+                    .addComponent(AgregarIngredienteAgregarBaleadaBt)
                     .addGroup(AgregarBaleadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                        .addComponent(jTextField7)))
+                        .addComponent(PrecioAgregarBaleadaTf, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                        .addComponent(IngredienteAgregarBaleadaTf)))
                 .addContainerGap(47, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarBaleadaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AgregarBaleadaAgregarBaleadaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         AgregarBaleadaLayout.setVerticalGroup(
@@ -782,15 +796,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(AgregarBaleadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PrecioAgregarBaleadaTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AgregarBaleadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel53)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(IngredienteAgregarBaleadaTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton21)
+                .addComponent(AgregarIngredienteAgregarBaleadaBt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AgregarBaleadaAgregarBaleadaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -819,24 +833,49 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel1.setText("Agregar Personas");
 
-        jButton1.setText("Jefe");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        JefeAgregarBt.setText("Jefe");
+        JefeAgregarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                JefeAgregarBtActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Empleado");
+        EmpleadoAgregarBt.setText("Empleado");
+        EmpleadoAgregarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmpleadoAgregarBtActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Cliente");
+        ClienteAgregarBt.setText("Cliente");
+        ClienteAgregarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClienteAgregarBtActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Articulos");
 
-        jButton4.setText("Familiar");
+        FamiliarAgregarBt.setText("Familiar");
+        FamiliarAgregarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FamiliarAgregarBtActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Gato");
+        GatoAgregarBt.setText("Gato");
+        GatoAgregarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GatoAgregarBtActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Baleada");
+        BaleadaAgregarBt.setText("Baleada");
+        BaleadaAgregarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BaleadaAgregarBtActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Árbol de personas");
 
@@ -852,16 +891,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JefeAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EmpleadoAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(86, 86, 86)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(GatoAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(BaleadaAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)))
+                        .addComponent(FamiliarAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                        .addComponent(ClienteAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)))
                 .addGap(62, 62, 62)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -882,16 +921,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                            .addComponent(GatoAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(JefeAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                            .addComponent(BaleadaAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(EmpleadoAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ClienteAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FamiliarAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
@@ -902,41 +941,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel5.setText("Productos");
 
-        ListarBg.add(jRadioButton1);
-        jRadioButton1.setText("Jefes");
+        ListarBg.add(JefesListarRb);
+        JefesListarRb.setSelected(true);
+        JefesListarRb.setText("Jefes");
 
-        ListarBg.add(jRadioButton2);
-        jRadioButton2.setText("Empleados");
+        ListarBg.add(EmpleadosListarRb);
+        EmpleadosListarRb.setText("Empleados");
 
-        ListarBg.add(jRadioButton3);
-        jRadioButton3.setText("Clientes");
+        ListarBg.add(ClientesListarRb);
+        ClientesListarRb.setText("Clientes");
 
-        ListarBg.add(jRadioButton4);
-        jRadioButton4.setText("Familiares");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        ListarBg.add(FamiliaresListarRb);
+        FamiliaresListarRb.setText("Familiares");
+        FamiliaresListarRb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                FamiliaresListarRbActionPerformed(evt);
             }
         });
 
-        ListarBg.add(jRadioButton5);
-        jRadioButton5.setText("Gatos");
+        ListarBg.add(GatosListarRb);
+        GatosListarRb.setText("Gatos");
 
-        ListarBg.add(jRadioButton6);
-        jRadioButton6.setText("Baleadas");
+        ListarBg.add(BaleadasListarRb);
+        BaleadasListarRb.setText("Baleadas");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TablaListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "ID", "Edad", "Nacionalidad", "Lugar de nacimiento", "Color de piel"
             }
         ));
-        jScrollPane4.setViewportView(jTable2);
+        jScrollPane4.setViewportView(TablaListar);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -950,19 +987,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
+                                .addComponent(JefesListarRb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton2)
+                                .addComponent(EmpleadosListarRb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton3)
+                                .addComponent(ClientesListarRb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton4)))
+                                .addComponent(FamiliaresListarRb)))
                         .addGap(45, 45, 45)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jRadioButton5)
+                                .addComponent(GatosListarRb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton6))
+                                .addComponent(BaleadasListarRb))
                             .addComponent(jLabel5))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -976,12 +1013,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
+                    .addComponent(JefesListarRb)
+                    .addComponent(EmpleadosListarRb)
+                    .addComponent(ClientesListarRb)
+                    .addComponent(FamiliaresListarRb)
+                    .addComponent(GatosListarRb)
+                    .addComponent(BaleadasListarRb))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(86, Short.MAX_VALUE))
@@ -993,25 +1030,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel7.setText("Productos");
 
-        ModificarBg.add(jRadioButton7);
-        jRadioButton7.setText("Jefes");
+        ModificarBg.add(JefesModificarRb);
+        JefesModificarRb.setSelected(true);
+        JefesModificarRb.setText("Jefes");
 
-        ModificarBg.add(jRadioButton8);
-        jRadioButton8.setText("Empleados");
+        ModificarBg.add(EmpleadosModificarRb);
+        EmpleadosModificarRb.setText("Empleados");
 
-        ModificarBg.add(jRadioButton9);
-        jRadioButton9.setText("Clientes");
+        ModificarBg.add(ClientesModificarRb);
+        ClientesModificarRb.setText("Clientes");
 
-        ModificarBg.add(jRadioButton10);
-        jRadioButton10.setText("Familiares");
+        ModificarBg.add(FamiliaresModificarRb);
+        FamiliaresModificarRb.setText("Familiares");
 
-        ModificarBg.add(jRadioButton11);
-        jRadioButton11.setText("Gatos");
+        ModificarBg.add(GatosModificarRb);
+        GatosModificarRb.setText("Gatos");
 
-        ModificarBg.add(jRadioButton12);
-        jRadioButton12.setText("Baleadas");
+        ModificarBg.add(BaleadasModificarRb);
+        BaleadasModificarRb.setText("Baleadas");
 
-        jButton7.setText("Actualizar Tabla y Botones");
+        ActualizarControlesModificarBt.setText("Actualizar controles");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1043,27 +1081,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton7)
+                                        .addComponent(JefesModificarRb)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton8)
+                                        .addComponent(EmpleadosModificarRb)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton9)
+                                        .addComponent(ClientesModificarRb)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton10))))
+                                        .addComponent(FamiliaresModificarRb))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButton7)
+                                .addComponent(ActualizarControlesModificarBt)
                                 .addGap(71, 320, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton11)
+                                        .addComponent(GatosModificarRb)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton12))
+                                        .addComponent(BaleadasModificarRb))
                                     .addComponent(jLabel7))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1085,16 +1123,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton7)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jRadioButton10)
-                    .addComponent(jRadioButton11)
-                    .addComponent(jRadioButton12))
+                    .addComponent(JefesModificarRb)
+                    .addComponent(EmpleadosModificarRb)
+                    .addComponent(ClientesModificarRb)
+                    .addComponent(FamiliaresModificarRb)
+                    .addComponent(GatosModificarRb)
+                    .addComponent(BaleadasModificarRb))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7))
+                    .addComponent(ActualizarControlesModificarBt))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
@@ -1165,38 +1203,41 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void FamiliaresListarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FamiliaresListarRbActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_FamiliaresListarRbActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void JefeAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JefeAgregarBtActionPerformed
         // TODO add your handling code here:
         EmpleadosTemporal.clear();
         AgregarJefe.setVisible(true);
         AgregarJefe.pack();
-        DefaultComboBoxModel modelo=new DefaultComboBoxModel();
+        AgregarJefe.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (int i = 0; i < Empleados.size(); i++) {
             modelo.addElement(Empleados.get(i));
         }
         AgregarEmpleadoAgregarJefeCb.setModel(modelo);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_JefeAgregarBtActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void AgregarEmpleadoAgregarJefeBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarEmpleadoAgregarJefeBtActionPerformed
         // TODO add your handling code here:
-        for (int i = 0; i < EmpleadosTemporal.size(); i++) {
-            EmpleadosTemporal.add(
-                    Empleados.get(
-                            AgregarEmpleadoAgregarJefeCb.getSelectedIndex()));
-        }
-    }//GEN-LAST:event_jButton12ActionPerformed
+        EmpleadosTemporal.add(
+                Empleados.get(
+                        AgregarEmpleadoAgregarJefeCb.getSelectedIndex()));
+    }//GEN-LAST:event_AgregarEmpleadoAgregarJefeBtActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void AgregarJefeAgregarJefeBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarJefeAgregarJefeBtActionPerformed
         // TODO add your handling code here:
         Jefes.add(new Jefe());
-        int pos = Jefes.size()-1;
+        int pos = Jefes.size() - 1;
         Jefes.get(pos).setNombre(NombreAgregarJefeTf.getText());
         Jefes.get(pos).setID(IDAgregarJefeTf.getText());
-        Jefes.get(pos).setEdad(Integer.parseInt(EdadAgregarJefeTf.getText()));
+        try {
+            Jefes.get(pos).setEdad(Integer.parseInt(EdadAgregarJefeTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarJefe, "¡Agregado!");
+        }
         Jefes.get(pos).setNacionalidad(NacionalidadAgregarJefeTf.getText());
         Jefes.get(pos).setLugarDeNacimiento(LugarDeNacimientoAgregarJefeTf.getText());
         Jefes.get(pos).setColorDePiel(ColorDePielAgregarJefeBt.getBackground());
@@ -1205,35 +1246,203 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         SeccionDeTrabajoAgregarJefeCb.getSelectedIndex()));
         Jefes.get(pos).setEmpleados(EmpleadosTemporal);
         Personas.add(Jefes.get(pos));
-    }//GEN-LAST:event_jButton10ActionPerformed
+        JOptionPane.showMessageDialog(AgregarJefe, "¡Agregado!");
+        AgregarJefe.dispose();
+    }//GEN-LAST:event_AgregarJefeAgregarJefeBtActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void AgregarEmpleadoAgregarEmpleadoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarEmpleadoAgregarEmpleadoBtActionPerformed
         // TODO add your handling code here:
         Empleados.add(new Empleado());
-        int pos = Empleados.size()-1;
+        int pos = Empleados.size() - 1;
         Empleados.get(pos).setNombre(NombreAgregarEmpleadoTf.getText());
         Empleados.get(pos).setID(IDAgregarEmpleadoTf.getText());
-        Empleados.get(pos).setEdad(Integer.parseInt(EdadAgregarEmpleadoTf.getText()));
+        try {
+            Empleados.get(pos).setEdad(Integer.parseInt(EdadAgregarEmpleadoTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarEmpleado, "Hubo un problema con la edad");
+        }
+        
         Empleados.get(pos).setNacionalidad(NacionalidadAgregarEmpleadoTf.getText());
         Empleados.get(pos).setLugarDeNacimiento(LugarDeNacimientoAgregarEmpleadoTf.getText());
         Empleados.get(pos).setColorDePiel(ColorDePielAgregarEmpleadoBt.getBackground());
         Empleados.get(pos).setSeccionDeTrabajo(
                 SeccionDeTrabajoAgregarJefeCb.getItemAt(
-                SeccionDeTrabajoAgregarJefeCb.getSelectedIndex()));
-        Empleados.get(pos).setHoraDeLlegada(
-        Integer.parseInt(HoraDeLlegadaAgregarEmpleadoSp.getValue().toString()));
-        Empleados.get(pos).setHoraDeSalida(
-        Integer.parseInt(HoraDeSalidaAgregarEmpleadoSp.getValue().toString()));
-        Empleados.get(pos).setSueldo(Float.parseFloat(SueldoAgregarEmpleadoTf.getText()));
+                        SeccionDeTrabajoAgregarJefeCb.getSelectedIndex()));
+        try {
+            Empleados.get(pos).setHoraDeLlegada(
+                Integer.parseInt(HoraDeLlegadaAgregarEmpleadoSp.getValue().toString()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarEmpleado, "Hubo problema con la hora de llegada");
+        }
+        try {
+            Empleados.get(pos).setHoraDeSalida(
+                Integer.parseInt(HoraDeSalidaAgregarEmpleadoSp.getValue().toString()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarEmpleado, "Hubo problema con la hora de salida");
+        }
+        try {
+            Empleados.get(pos).setSueldo(Float.parseFloat(SueldoAgregarEmpleadoTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarEmpleado, "Hubo un problema con el sueldo");
+        }
+        
         Empleados.get(pos).setEstado(EstadoAgregarEmpleadoCb.getItemAt(
-        EstadoAgregarEmpleadoCb.getSelectedIndex()));
+                EstadoAgregarEmpleadoCb.getSelectedIndex()));
         Personas.add(Empleados.get(pos));
-    }//GEN-LAST:event_jButton13ActionPerformed
+        JOptionPane.showMessageDialog(AgregarEmpleado, "¡Agregado!");
+        AgregarEmpleado.dispose();
+    }//GEN-LAST:event_AgregarEmpleadoAgregarEmpleadoBtActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void AgregarClienteAgregarClienteBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarClienteAgregarClienteBtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+        Clientes.add(new Cliente());
+        int pos = Clientes.size() - 1;
+        Clientes.get(pos).setNombre(NombreAgregarClienteTf.getText());
+        Clientes.get(pos).setID(IDAgregarClienteTf.getText());
+        try {
+            Clientes.get(pos).setEdad(Integer.parseInt(EdadAgregarClienteTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarCliente, "Hubo un problema con la edad");
+        }
+        
+        Clientes.get(pos).setNacionalidad(NacionalidadAgregarClienteTf.getText());
+        Clientes.get(pos).setLugarDeNacimiento(LugarDeNacimientoAgregarClienteTf.getText());
+        Clientes.get(pos).setColorDePiel(ColorDePielAgregarClienteBt.getBackground());
+        try {
+            Clientes.get(pos).setDinero(Float.parseFloat(DineroAgregarClienteTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarCliente, "Hubo un problema con el dinero");
+        }
+        Personas.add(Clientes.get(pos));
+        JOptionPane.showMessageDialog(AgregarCliente, "¡Agregado!");
+        AgregarCliente.dispose();
+    }//GEN-LAST:event_AgregarClienteAgregarClienteBtActionPerformed
 
+    private void ClienteAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteAgregarBtActionPerformed
+        // TODO add your handling code here:
+        AgregarCliente.setVisible(true);
+        AgregarCliente.pack();
+        AgregarCliente.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (int i = 0; i < Personas.size(); i++) {
+            modelo.addElement(Personas.get(i));
+            modelo1.addElement(Personas.get(i));
+        }
+        FamiliarPadreAgregarFamiliarCb.setModel(modelo);
+        FamiliarHijoAgregarFamiliarCb.setModel(modelo1);
+    }//GEN-LAST:event_ClienteAgregarBtActionPerformed
+
+    private void AgregarFamiliarHijoAgregarFamiliarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarFamiliarHijoAgregarFamiliarBtActionPerformed
+        // TODO add your handling code here:
+        FamiliaresTemporal.add(
+                Familiares.get(FamiliarHijoAgregarFamiliarCb.getSelectedIndex()));
+    }//GEN-LAST:event_AgregarFamiliarHijoAgregarFamiliarBtActionPerformed
+
+    private void AgregarFamiliarAgregarFamiliarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarFamiliarAgregarFamiliarBtActionPerformed
+        // TODO add your handling code here:
+        Familiares.add(new Familiar());
+        int pos = Familiares.size() - 1;
+        Familiares.get(pos).setNombre(NombreAgregarFamiliarTf.getText());
+        Familiares.get(pos).setID(IDAgregarFamiliarTf.getText());
+        try {
+            Familiares.get(pos).setEdad(Integer.parseInt(EdadAgregarFamiliarTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarFamiliar, "Hubo un problema con la edad");
+        }
+        Familiares.get(pos).setNacionalidad(NacionalidadAgregarFamiliarTf.getText());
+        Familiares.get(pos).setLugarDeNacimiento(LugarDeNacimientoAgregarFamiliarTf.getText());
+        Familiares.get(pos).setColorDePiel(ColorDePielAgregarFamiliarBt.getBackground());
+        Familiares.get(pos).setPadre(
+                Familiares.get(
+                        FamiliarPadreAgregarFamiliarCb.getSelectedIndex()));
+        JOptionPane.showMessageDialog(AgregarFamiliar, "¡Agregado!");
+        AgregarFamiliar.dispose();
+    }//GEN-LAST:event_AgregarFamiliarAgregarFamiliarBtActionPerformed
+
+    private void FamiliarAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FamiliarAgregarBtActionPerformed
+        // TODO add your handling code here:
+        FamiliaresTemporal.clear();
+        AgregarFamiliar.setVisible(true);
+        AgregarFamiliar.pack();
+        AgregarFamiliar.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (int i = 0; i < Familiares.size(); i++) {
+            modelo.addElement(Familiares.get(i));
+            modelo1.addElement(Familiares.get(i));
+        }
+        FamiliarPadreAgregarFamiliarCb.setModel(modelo);
+        FamiliarPadreAgregarFamiliarCb.setModel(modelo1);
+    }//GEN-LAST:event_FamiliarAgregarBtActionPerformed
+
+    private void GatoAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GatoAgregarBtActionPerformed
+        // TODO add your handling code here:
+        AgregarGato.setVisible(true);
+        AgregarGato.pack();
+        AgregarGato.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_GatoAgregarBtActionPerformed
+
+    private void EmpleadoAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadoAgregarBtActionPerformed
+        // TODO add your handling code here:
+        AgregarEmpleado.setVisible(true);
+        AgregarEmpleado.pack();
+        AgregarEmpleado.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_EmpleadoAgregarBtActionPerformed
+
+    private void AgregarGatoAgregarGatoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarGatoAgregarGatoBtActionPerformed
+        // TODO add your handling code here:
+        Articulos.add(new Gato());
+        int pos=Articulos.size()-1;
+        try {
+            Articulos.get(pos).setPrecio(
+            Float.parseFloat(PrecioAgregarGatoTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con el precio");
+        }
+        try {
+            ((Gato)(Articulos.get(pos))).setPeso(
+            Float.parseFloat(PrecioAgregarGatoTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con el peso");
+        }
+        try {
+            ((Gato)(Articulos.get(pos))).setAltura(
+            Float.parseFloat(AlturaAgregarGatoTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con la altura");
+        }
+        JOptionPane.showMessageDialog(AgregarGato, "¡Agregado!");
+        AgregarGato.dispose();
+    }//GEN-LAST:event_AgregarGatoAgregarGatoBtActionPerformed
+
+    private void AgregarIngredienteAgregarBaleadaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarIngredienteAgregarBaleadaBtActionPerformed
+        // TODO add your handling code here:
+        IngredientesTemporal.add(IngredienteAgregarBaleadaTf.getText());
+    }//GEN-LAST:event_AgregarIngredienteAgregarBaleadaBtActionPerformed
+
+    private void AgregarBaleadaAgregarBaleadaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarBaleadaAgregarBaleadaBtActionPerformed
+        // TODO add your handling code here:
+        Articulos.add(new Baleada());
+        int pos=Articulos.size()-1;
+        try {
+            Articulos.get(pos).setPrecio(
+            Float.parseFloat(PrecioAgregarBaleadaTf.getText()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarBaleada, "Hubo un problema con el precio");
+        }
+        ((Baleada)Articulos.get(pos)).setIngredientes(IngredientesTemporal);
+        JOptionPane.showMessageDialog(AgregarBaleada, "¡Agregado!");
+        AgregarBaleada.dispose();
+    }//GEN-LAST:event_AgregarBaleadaAgregarBaleadaBtActionPerformed
+
+    private void BaleadaAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaleadaAgregarBtActionPerformed
+        // TODO add your handling code here:
+        AgregarBaleada.setVisible(true);
+        AgregarBaleada.pack();
+        IngredientesTemporal.clear();
+    }//GEN-LAST:event_BaleadaAgregarBtActionPerformed
+    ArrayList<String> IngredientesTemporal=new ArrayList();
     /**
      * @param args the command line arguments
      */
@@ -1270,70 +1479,87 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDialog Agregar;
+    private javax.swing.JButton ActualizarControlesModificarBt;
     private javax.swing.JDialog AgregarBaleada;
+    private javax.swing.JButton AgregarBaleadaAgregarBaleadaBt;
     private javax.swing.JDialog AgregarCliente;
+    private javax.swing.JButton AgregarClienteAgregarClienteBt;
     private javax.swing.JDialog AgregarEmpleado;
+    private javax.swing.JButton AgregarEmpleadoAgregarEmpleadoBt;
+    private javax.swing.JButton AgregarEmpleadoAgregarJefeBt;
     private javax.swing.JComboBox<String> AgregarEmpleadoAgregarJefeCb;
     private javax.swing.JDialog AgregarFamiliar;
+    private javax.swing.JButton AgregarFamiliarAgregarFamiliarBt;
     private javax.swing.ButtonGroup AgregarFamiliarBg;
     private javax.swing.ButtonGroup AgregarFamiliarBg1;
+    private javax.swing.JButton AgregarFamiliarHijoAgregarFamiliarBt;
     private javax.swing.JDialog AgregarGato;
+    private javax.swing.JButton AgregarGatoAgregarGatoBt;
+    private javax.swing.JButton AgregarIngredienteAgregarBaleadaBt;
     private javax.swing.JDialog AgregarJefe;
+    private javax.swing.JButton AgregarJefeAgregarJefeBt;
+    private javax.swing.JTextField AlturaAgregarGatoTf;
+    private javax.swing.JButton BaleadaAgregarBt;
+    private javax.swing.JRadioButton BaleadasListarRb;
+    private javax.swing.JRadioButton BaleadasModificarRb;
+    private javax.swing.JButton ClienteAgregarBt;
+    private javax.swing.JRadioButton ClientesListarRb;
+    private javax.swing.JRadioButton ClientesModificarRb;
     private javax.swing.JButton ColorDePielAgregarClienteBt;
     private javax.swing.JButton ColorDePielAgregarEmpleadoBt;
+    private javax.swing.JButton ColorDePielAgregarFamiliarBt;
     private javax.swing.JButton ColorDePielAgregarJefeBt;
     private javax.swing.JTextField DineroAgregarClienteTf;
     private javax.swing.JTextField EdadAgregarClienteTf;
     private javax.swing.JTextField EdadAgregarEmpleadoTf;
+    private javax.swing.JTextField EdadAgregarFamiliarTf;
     private javax.swing.JTextField EdadAgregarJefeTf;
-    private javax.swing.JTextField EdadJefeTf3;
+    private javax.swing.JButton EmpleadoAgregarBt;
+    private javax.swing.JRadioButton EmpleadosListarRb;
+    private javax.swing.JRadioButton EmpleadosModificarRb;
     private javax.swing.JComboBox<String> EstadoAgregarEmpleadoCb;
+    private javax.swing.JButton FamiliarAgregarBt;
+    private javax.swing.JComboBox<String> FamiliarHijoAgregarFamiliarCb;
+    private javax.swing.JComboBox<String> FamiliarPadreAgregarFamiliarCb;
+    private javax.swing.JRadioButton FamiliaresListarRb;
+    private javax.swing.JRadioButton FamiliaresModificarRb;
+    private javax.swing.JButton GatoAgregarBt;
+    private javax.swing.JRadioButton GatosListarRb;
+    private javax.swing.JRadioButton GatosModificarRb;
     private javax.swing.JSpinner HoraDeLlegadaAgregarEmpleadoSp;
     private javax.swing.JSpinner HoraDeSalidaAgregarEmpleadoSp;
     private javax.swing.JTextField IDAgregarClienteTf;
     private javax.swing.JTextField IDAgregarEmpleadoTf;
+    private javax.swing.JTextField IDAgregarFamiliarTf;
     private javax.swing.JTextField IDAgregarJefeTf;
-    private javax.swing.JTextField IdJefeTf3;
+    private javax.swing.JTextField IngredienteAgregarBaleadaTf;
+    private javax.swing.JButton JefeAgregarBt;
+    private javax.swing.JRadioButton JefesListarRb;
+    private javax.swing.JRadioButton JefesModificarRb;
     private javax.swing.ButtonGroup ListarBg;
     private javax.swing.JTextField LugarDeNacimientoAgregarClienteTf;
     private javax.swing.JTextField LugarDeNacimientoAgregarEmpleadoTf;
+    private javax.swing.JTextField LugarDeNacimientoAgregarFamiliarTf;
     private javax.swing.JTextField LugarDeNacimientoAgregarJefeTf;
-    private javax.swing.JTextField LugarDeNacimientoTf3;
     private javax.swing.ButtonGroup ModificarBg;
     private javax.swing.JTextField NacionalidadAgregarClienteTf;
     private javax.swing.JTextField NacionalidadAgregarEmpleadoTf;
+    private javax.swing.JTextField NacionalidadAgregarFamiliarTf;
     private javax.swing.JTextField NacionalidadAgregarJefeTf;
-    private javax.swing.JTextField NacionalidadJefeTf3;
     private javax.swing.JTextField NombreAgregarClienteTf;
     private javax.swing.JTextField NombreAgregarEmpleadoTf;
+    private javax.swing.JTextField NombreAgregarFamiliarTf;
     private javax.swing.JTextField NombreAgregarJefeTf;
-    private javax.swing.JTextField NombreJefeTf3;
+    private javax.swing.JTextField PesoAgregarGatoTf;
+    private javax.swing.JTextField PrecioAgregarBaleadaTf;
+    private javax.swing.JTextField PrecioAgregarGatoTf;
     private javax.swing.JComboBox<String> SeccionDeTrabajoAgregarJefeCb;
     private javax.swing.JTextField SueldoAgregarEmpleadoTf;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JTable TablaListar;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1399,18 +1625,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1420,25 +1634,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
     private javax.swing.JTree jTree3;
     private javax.swing.JTree jTree4;
     private javax.swing.JTree jTree5;
     // End of variables declaration//GEN-END:variables
-    static ArrayList<Persona> Personas=new ArrayList();
-    static ArrayList<Jefe> Jefes=new ArrayList();
-    static ArrayList<Empleado> Empleados=new ArrayList();
-    static ArrayList<Cliente> Clientes=new ArrayList();
-    static ArrayList<Familiar> Familiares=new ArrayList();
-    static ArrayList<Articulo> Articulos=new ArrayList();
-    
-    static ArrayList<Empleado> EmpleadosTemporal=new ArrayList();
-    
+    static ArrayList<Persona> Personas = new ArrayList();
+    static ArrayList<Jefe> Jefes = new ArrayList();
+    static ArrayList<Empleado> Empleados = new ArrayList();
+    static ArrayList<Cliente> Clientes = new ArrayList();
+    static ArrayList<Familiar> Familiares = new ArrayList();
+    static ArrayList<Articulo> Articulos = new ArrayList();
+
+    static ArrayList<Empleado> EmpleadosTemporal = new ArrayList();
+    static ArrayList<Familiar> FamiliaresTemporal = new ArrayList();
+
 }
