@@ -12,14 +12,9 @@ import java.util.ArrayList;
  *
  * @author ofici
  */
-class Familiar {
-
-    private int Edad;
-    private String ID;
-    private String Nacionalidad;
-    private String LugarDeNacimiento;
-    private String Nombre;
-    private Color ColorDePiel;
+class Familiar extends Persona{
+    
+    
     private Familiar Padre;
     private ArrayList<Familiar> Hijos = new ArrayList();
 

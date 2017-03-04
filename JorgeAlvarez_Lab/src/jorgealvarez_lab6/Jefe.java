@@ -43,7 +43,8 @@ public class Jefe extends Persona {
 
     public void setSeccionDeTrabajo(String SeccionDeTrabajo) {
         if (SeccionDeTrabajo.equalsIgnoreCase("Venta de baleadas")||
-                SeccionDeTrabajo.equalsIgnoreCase("Venta de gatos")) {
+                SeccionDeTrabajo.equalsIgnoreCase("Venta de gatos")||
+                SeccionDeTrabajo.equalsIgnoreCase("Cocina")) {
             this.SeccionDeTrabajo = SeccionDeTrabajo;
         }
     }
