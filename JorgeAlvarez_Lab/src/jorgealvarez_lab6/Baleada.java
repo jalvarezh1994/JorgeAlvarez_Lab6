@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author ofici
  */
-public class Baleada extends Articulo{
+public class Baleada extends Articulo {
 
     ArrayList<String> Ingredientes = new ArrayList();
 
@@ -29,7 +29,6 @@ public class Baleada extends Articulo{
 
     @Override
     public String toString() {
-        return "Baleada{" + "Ingredientes=" + Ingredientes + '}';
+        return "Baleada L." + Precio;
     }
-
 }

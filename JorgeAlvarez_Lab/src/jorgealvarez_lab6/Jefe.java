@@ -75,7 +75,7 @@ public class Jefe extends Persona {
 
     @Override
     public String toString() {
-        return "Jefe{" + "SeccionDeTrabajo=" + SeccionDeTrabajo + ", Empleados=" + Empleados + ", ClientesAtendidos=" + ClientesAtendidos + ", GananciaTotal=" + GananciaTotal + '}';
+        return Nombre;
     }
 
 }

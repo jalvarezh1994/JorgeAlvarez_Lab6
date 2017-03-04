@@ -41,7 +41,7 @@ public class Gato extends Articulo {
 
     @Override
     public String toString() {
-        return "Gato{" + "Altura=" + Altura + ", Peso=" + Peso + '}';
+        return "Gato L."+Precio;
     }
 
 }
