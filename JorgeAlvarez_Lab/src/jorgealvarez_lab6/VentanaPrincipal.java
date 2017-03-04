@@ -8,6 +8,7 @@ package jorgealvarez_lab6;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -183,6 +184,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTree6 = new javax.swing.JTree();
+        jLabel54 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -944,12 +948,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ListarBg.add(JefesListarRb);
         JefesListarRb.setSelected(true);
         JefesListarRb.setText("Jefes");
+        JefesListarRb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JefesListarRbActionPerformed(evt);
+            }
+        });
 
         ListarBg.add(EmpleadosListarRb);
         EmpleadosListarRb.setText("Empleados");
+        EmpleadosListarRb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmpleadosListarRbActionPerformed(evt);
+            }
+        });
 
         ListarBg.add(ClientesListarRb);
         ClientesListarRb.setText("Clientes");
+        ClientesListarRb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClientesListarRbActionPerformed(evt);
+            }
+        });
 
         ListarBg.add(FamiliaresListarRb);
         FamiliaresListarRb.setText("Familiares");
@@ -1068,6 +1087,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jButton9.setText("Eliminar");
 
+        jScrollPane8.setViewportView(jTree6);
+
+        jLabel54.setText("Arbol de Familiares");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1075,44 +1098,51 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(JefesModificarRb)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(EmpleadosModificarRb)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ClientesModificarRb)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(FamiliaresModificarRb))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(ActualizarControlesModificarBt)
-                                .addGap(71, 320, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(GatosModificarRb)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(BaleadasModificarRb))
-                                    .addComponent(jLabel7))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3))
+                                .addComponent(JefesModificarRb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(EmpleadosModificarRb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ClientesModificarRb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(FamiliaresModificarRb))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(42, 42, 42)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(ActualizarControlesModificarBt)
+                        .addGap(71, 320, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(GatosModificarRb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BaleadasModificarRb))
+                            .addComponent(jLabel7))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel54)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1135,11 +1165,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(ActualizarControlesModificarBt))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(jLabel54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
 
         jTabbedPane1.addTab("Modificar", jPanel3);
@@ -1205,6 +1242,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void FamiliaresListarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FamiliaresListarRbActionPerformed
         // TODO add your handling code here:
+        TablaListar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "ID", "Edad", "Nacionalidad", "Lugar de nacimiento", "Color de piel",
+                    "Familiar Padre"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) TablaListar.getModel();
+        for (Familiar t : Familiares) {
+            Object[] fila = {
+                t.getNombre(),
+                t.getID(),
+                t.getEdad(),
+                t.getNacionalidad(),
+                t.getLugarDeNacimiento(),
+                t.getColorDePiel(),
+                t.getPadre()
+            };
+            modelo.addRow(fila);
+        }
+        TablaListar.setModel(modelo);
     }//GEN-LAST:event_FamiliaresListarRbActionPerformed
 
     private void JefeAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JefeAgregarBtActionPerformed
@@ -1261,7 +1319,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarEmpleado, "Hubo un problema con la edad");
         }
-        
+
         Empleados.get(pos).setNacionalidad(NacionalidadAgregarEmpleadoTf.getText());
         Empleados.get(pos).setLugarDeNacimiento(LugarDeNacimientoAgregarEmpleadoTf.getText());
         Empleados.get(pos).setColorDePiel(ColorDePielAgregarEmpleadoBt.getBackground());
@@ -1270,13 +1328,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         SeccionDeTrabajoAgregarJefeCb.getSelectedIndex()));
         try {
             Empleados.get(pos).setHoraDeLlegada(
-                Integer.parseInt(HoraDeLlegadaAgregarEmpleadoSp.getValue().toString()));
+                    Integer.parseInt(HoraDeLlegadaAgregarEmpleadoSp.getValue().toString()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarEmpleado, "Hubo problema con la hora de llegada");
         }
         try {
             Empleados.get(pos).setHoraDeSalida(
-                Integer.parseInt(HoraDeSalidaAgregarEmpleadoSp.getValue().toString()));
+                    Integer.parseInt(HoraDeSalidaAgregarEmpleadoSp.getValue().toString()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarEmpleado, "Hubo problema con la hora de salida");
         }
@@ -1285,7 +1343,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarEmpleado, "Hubo un problema con el sueldo");
         }
-        
+
         Empleados.get(pos).setEstado(EstadoAgregarEmpleadoCb.getItemAt(
                 EstadoAgregarEmpleadoCb.getSelectedIndex()));
         Personas.add(Empleados.get(pos));
@@ -1304,7 +1362,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarCliente, "Hubo un problema con la edad");
         }
-        
+
         Clientes.get(pos).setNacionalidad(NacionalidadAgregarClienteTf.getText());
         Clientes.get(pos).setLugarDeNacimiento(LugarDeNacimientoAgregarClienteTf.getText());
         Clientes.get(pos).setColorDePiel(ColorDePielAgregarClienteBt.getBackground());
@@ -1393,22 +1451,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void AgregarGatoAgregarGatoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarGatoAgregarGatoBtActionPerformed
         // TODO add your handling code here:
         Articulos.add(new Gato());
-        int pos=Articulos.size()-1;
+        int pos = Articulos.size() - 1;
         try {
             Articulos.get(pos).setPrecio(
-            Float.parseFloat(PrecioAgregarGatoTf.getText()));
+                    Float.parseFloat(PrecioAgregarGatoTf.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con el precio");
         }
         try {
-            ((Gato)(Articulos.get(pos))).setPeso(
-            Float.parseFloat(PrecioAgregarGatoTf.getText()));
+            ((Gato) (Articulos.get(pos))).setPeso(
+                    Float.parseFloat(PrecioAgregarGatoTf.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con el peso");
         }
         try {
-            ((Gato)(Articulos.get(pos))).setAltura(
-            Float.parseFloat(AlturaAgregarGatoTf.getText()));
+            ((Gato) (Articulos.get(pos))).setAltura(
+                    Float.parseFloat(AlturaAgregarGatoTf.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con la altura");
         }
@@ -1424,14 +1482,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void AgregarBaleadaAgregarBaleadaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarBaleadaAgregarBaleadaBtActionPerformed
         // TODO add your handling code here:
         Articulos.add(new Baleada());
-        int pos=Articulos.size()-1;
+        int pos = Articulos.size() - 1;
         try {
             Articulos.get(pos).setPrecio(
-            Float.parseFloat(PrecioAgregarBaleadaTf.getText()));
+                    Float.parseFloat(PrecioAgregarBaleadaTf.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarBaleada, "Hubo un problema con el precio");
         }
-        ((Baleada)Articulos.get(pos)).setIngredientes(IngredientesTemporal);
+        ((Baleada) Articulos.get(pos)).setIngredientes(IngredientesTemporal);
         JOptionPane.showMessageDialog(AgregarBaleada, "¡Agregado!");
         AgregarBaleada.dispose();
     }//GEN-LAST:event_AgregarBaleadaAgregarBaleadaBtActionPerformed
@@ -1442,7 +1500,89 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         AgregarBaleada.pack();
         IngredientesTemporal.clear();
     }//GEN-LAST:event_BaleadaAgregarBtActionPerformed
-    ArrayList<String> IngredientesTemporal=new ArrayList();
+
+    private void JefesListarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JefesListarRbActionPerformed
+        // TODO add your handling code here:
+        TablaListar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "ID", "Edad", "Nacionalidad", "Lugar de nacimiento", "Color de piel",
+                    "Seccion de trabajo", "Clientes atendidos", "Ganancia total"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) TablaListar.getModel();
+        for (Jefe t : Jefes) {
+            Object[] fila = {
+                t.getNombre(),
+                t.getID(),
+                t.getEdad(),
+                t.getNacionalidad(),
+                t.getLugarDeNacimiento(),
+                t.getColorDePiel(),
+                t.getSeccionDeTrabajo(),
+                t.getClientesAtendidos(),
+                t.getGananciaTotal()
+            };
+            modelo.addRow(fila);
+        }
+        TablaListar.setModel(modelo);
+    }//GEN-LAST:event_JefesListarRbActionPerformed
+
+    private void EmpleadosListarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosListarRbActionPerformed
+        // TODO add your handling code here:
+        TablaListar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "ID", "Edad", "Nacionalidad", "Lugar de nacimiento", "Color de piel",
+                    "Seccion de trabajo", "Hora de llegada","Hora de salida","Sueldo","Estado"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) TablaListar.getModel();
+        for (Empleado t : Empleados) {
+            Object[] fila = {
+                t.getNombre(),
+                t.getID(),
+                t.getEdad(),
+                t.getNacionalidad(),
+                t.getLugarDeNacimiento(),
+                t.getColorDePiel(),
+                t.getSeccionDeTrabajo(),
+                t.getHoraDeLlegada(),
+                t.getHoraDeSalida(),
+                t.getSueldo(),
+                t.getEstado()
+            };
+            modelo.addRow(fila);
+        }
+        TablaListar.setModel(modelo);
+    }//GEN-LAST:event_EmpleadosListarRbActionPerformed
+
+    private void ClientesListarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesListarRbActionPerformed
+        // TODO add your handling code here:
+        TablaListar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "ID", "Edad", "Nacionalidad", "Lugar de nacimiento", "Color de piel",
+                    "Dinero"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) TablaListar.getModel();
+        for (Cliente t : Clientes) {
+            Object[] fila = {
+                t.getNombre(),
+                t.getID(),
+                t.getEdad(),
+                t.getNacionalidad(),
+                t.getLugarDeNacimiento(),
+                t.getColorDePiel(),
+                t.getDinero()
+            };
+            modelo.addRow(fila);
+        }
+        TablaListar.setModel(modelo);
+    }//GEN-LAST:event_ClientesListarRbActionPerformed
+    
+
     /**
      * @param args the command line arguments
      */
@@ -1609,6 +1749,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1632,6 +1773,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTree jTree1;
@@ -1639,6 +1781,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTree jTree3;
     private javax.swing.JTree jTree4;
     private javax.swing.JTree jTree5;
+    private javax.swing.JTree jTree6;
     // End of variables declaration//GEN-END:variables
     static ArrayList<Persona> Personas = new ArrayList();
     static ArrayList<Jefe> Jefes = new ArrayList();
@@ -1649,5 +1792,5 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     static ArrayList<Empleado> EmpleadosTemporal = new ArrayList();
     static ArrayList<Familiar> FamiliaresTemporal = new ArrayList();
-
+    static ArrayList<String> IngredientesTemporal = new ArrayList();
 }
