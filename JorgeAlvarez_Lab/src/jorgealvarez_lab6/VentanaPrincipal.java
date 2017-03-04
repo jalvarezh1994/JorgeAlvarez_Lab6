@@ -5,8 +5,15 @@
  */
 package jorgealvarez_lab6;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JColorChooser;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,12 +23,21 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    JColorChooser jcc = new JColorChooser();
+    
+    
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
-        IngredientesModificarTf.setEnabled(false);
+
+        this.setResizable(false);
+        Jefes.add(new Jefe());
+        Jefes.add(new Jefe());
+        Jefes.add(new Jefe());
+        AgregarAlCarroNuevaVentaBt.setEnabled(false);
+        RealizarVentaNuevaVentaBt.setEnabled(false);
     }
 
     /**
@@ -143,6 +159,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         IngredienteAgregarBaleadaTf = new javax.swing.JTextField();
         AgregarIngredienteAgregarBaleadaBt = new javax.swing.JButton();
         AgregarBaleadaAgregarBaleadaBt = new javax.swing.JButton();
+        NuevaVenta = new javax.swing.ButtonGroup();
+        Reportes = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -159,6 +177,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTree2 = new javax.swing.JTree();
+        jLabel67 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTree6 = new javax.swing.JTree();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -181,58 +202,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BaleadasModificarRb = new javax.swing.JRadioButton();
         ComboBoxModificar = new javax.swing.JComboBox<>();
         ActualizarControlesModificarBt = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        TablaModificar = new javax.swing.JTable();
-        GuardarCambiosModificarBt = new javax.swing.JButton();
         EliminarModificarBt = new javax.swing.JButton();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        ArbolModificar = new javax.swing.JTree();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        ColorDePielModificarBt = new javax.swing.JButton();
-        IngredientesModificarTf = new javax.swing.JTextField();
-        jLabel56 = new javax.swing.JLabel();
-        jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        FamiliarPadreModificarCb = new javax.swing.JComboBox<>();
-        AgregarEmpleadoModificarCb = new javax.swing.JComboBox<>();
-        AgregarEmpleadoModificarBt = new javax.swing.JButton();
-        jLabel59 = new javax.swing.JLabel();
-        EliminarEmpleadoModificarCb = new javax.swing.JComboBox<>();
-        EliminarEmpleadoModificarBt = new javax.swing.JButton();
-        jLabel60 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        FamiliaresModificarCb = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        ClienteNuevaVentaCb = new javax.swing.JComboBox<>();
+        ArticuloNuevaVentaCb = new javax.swing.JComboBox<>();
         jLabel66 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        BaleadasNuevaVentaRb = new javax.swing.JRadioButton();
+        GatosNuevaVentaRb = new javax.swing.JRadioButton();
+        EmpleadoNuevaVentaCb = new javax.swing.JComboBox<>();
+        AgregarAlCarroNuevaVentaBt = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         CarritoNuevaVentaLi = new javax.swing.JList<>();
         jLabel64 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        RealizarVentaNuevaVentaBt = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel7 = new javax.swing.JPanel();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        AbrirMn = new javax.swing.JMenuItem();
+        GuardarMn = new javax.swing.JMenuItem();
+        GuardarComoMn = new javax.swing.JMenuItem();
+        AcercaDeMn = new javax.swing.JMenuItem();
+        SalirMn = new javax.swing.JMenuItem();
 
         jLabel8.setText("Edad");
 
@@ -248,7 +247,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel15.setText("Color de piel");
 
-        AgregarJefeAgregarJefeBt.setText("Agregar Jefe");
+        AgregarJefeAgregarJefeBt.setText("Confirmar");
         AgregarJefeAgregarJefeBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarJefeAgregarJefeBtActionPerformed(evt);
@@ -260,6 +259,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel16.setText("Sección de Trabajo");
 
         SeccionDeTrabajoAgregarJefeCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cocina", "Venta de baleadas", "Venta de gatos" }));
+        SeccionDeTrabajoAgregarJefeCb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SeccionDeTrabajoAgregarJefeCbActionPerformed(evt);
+            }
+        });
 
         jLabel17.setText("Empleado");
 
@@ -378,7 +382,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel25.setText("Color de piel");
 
-        AgregarEmpleadoAgregarEmpleadoBt.setText("Agregar Empleado");
+        AgregarEmpleadoAgregarEmpleadoBt.setText("Confirmar");
         AgregarEmpleadoAgregarEmpleadoBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarEmpleadoAgregarEmpleadoBtActionPerformed(evt);
@@ -435,7 +439,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(HoraDeSalidaAgregarEmpleadoSp)
                     .addComponent(SueldoAgregarEmpleadoTf)
                     .addComponent(EstadoAgregarEmpleadoCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(AgregarEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel24)
                     .addGroup(AgregarEmpleadoLayout.createSequentialGroup()
@@ -456,7 +460,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(AgregarEmpleadoLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                         .addComponent(AgregarEmpleadoAgregarEmpleadoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(AgregarEmpleadoLayout.createSequentialGroup()
@@ -523,7 +527,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel38.setText("Color de piel");
 
-        AgregarClienteAgregarClienteBt.setText("Agregar Cliente");
+        AgregarClienteAgregarClienteBt.setText("Confirmar");
         AgregarClienteAgregarClienteBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarClienteAgregarClienteBtActionPerformed(evt);
@@ -560,7 +564,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(LugarDeNacimientoAgregarClienteTf)
                     .addComponent(ColorDePielAgregarClienteBt, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DineroAgregarClienteTf))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(AgregarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel37)
                     .addGroup(AgregarClienteLayout.createSequentialGroup()
@@ -581,7 +585,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(AgregarClienteLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AgregarClienteAgregarClienteBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(AgregarClienteLayout.createSequentialGroup()
@@ -630,7 +634,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel47.setText("Color de piel");
 
-        AgregarFamiliarAgregarFamiliarBt.setText("Agregar Familiar");
+        AgregarFamiliarAgregarFamiliarBt.setText("Confirmar");
         AgregarFamiliarAgregarFamiliarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarFamiliarAgregarFamiliarBtActionPerformed(evt);
@@ -743,7 +747,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel48.setText("Altura");
 
-        AgregarGatoAgregarGatoBt.setText("Agregar Gato");
+        AgregarGatoAgregarGatoBt.setText("Confirmar");
         AgregarGatoAgregarGatoBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarGatoAgregarGatoBtActionPerformed(evt);
@@ -804,7 +808,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        AgregarBaleadaAgregarBaleadaBt.setText("Agregar Baleada");
+        AgregarBaleadaAgregarBaleadaBt.setText("Confirmar");
         AgregarBaleadaAgregarBaleadaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarBaleadaAgregarBaleadaBtActionPerformed(evt);
@@ -852,6 +856,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(jTree1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -861,13 +867,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(444, Short.MAX_VALUE))
+                .addContainerGap(492, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -921,7 +927,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setText("Árbol de personas");
 
+        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Personas");
+        jTree2.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane2.setViewportView(jTree2);
+
+        jLabel67.setText("Árbol de artículos");
+
+        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Articulos");
+        jTree6.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane11.setViewportView(jTree6);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -929,27 +943,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(JefeAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EmpleadoAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JefeAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(86, 86, 86)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(GatoAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                            .addComponent(BaleadaAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(BaleadaAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(FamiliarAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                        .addComponent(ClienteAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)))
+                        .addComponent(ClienteAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(EmpleadoAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(GatoAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(62, 62, 62)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 298, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane11)
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                    .addComponent(jLabel67))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -962,19 +978,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(GatoAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                            .addComponent(JefeAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel67)
                         .addGap(18, 18, 18)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BaleadaAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EmpleadoAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                            .addComponent(JefeAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(BaleadaAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EmpleadoAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GatoAgregarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(ClienteAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(FamiliarAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(110, Short.MAX_VALUE))
+                        .addComponent(FamiliarAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(313, 313, 313))))
         );
 
         jTabbedPane1.addTab("Agregar", jPanel2);
@@ -1062,7 +1084,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(BaleadasListarRb))
                             .addComponent(jLabel5))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1080,8 +1102,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(GatosListarRb)
                     .addComponent(BaleadasListarRb))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Listar", jPanel5);
@@ -1139,111 +1161,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         ActualizarControlesModificarBt.setText("Seleccionar");
-
-        TablaModificar.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "ID", "Edad", "Nacionalidad", "Lugar de nacimiento"
+        ActualizarControlesModificarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarControlesModificarBtActionPerformed(evt);
             }
-        ));
-        jScrollPane3.setViewportView(TablaModificar);
-
-        GuardarCambiosModificarBt.setText("Guardar Cambios");
+        });
 
         EliminarModificarBt.setText("Eliminar");
-
-        jScrollPane8.setViewportView(ArbolModificar);
-
-        jLabel54.setText("Árbol de Familiares");
-
-        jLabel55.setText("Color de piel");
-
-        ColorDePielModificarBt.setText("Color");
-
-        jLabel56.setText("Ingredientes");
-
-        jLabel57.setText("Familiar padre");
-
-        jLabel58.setText("Agregar empleado");
-
-        AgregarEmpleadoModificarBt.setText("Agregar Empleado");
-
-        jLabel59.setText("Eliminar empleado");
-
-        EliminarEmpleadoModificarBt.setText("Eliminar Empleado");
-
-        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel60.setText("Baleadas");
-
-        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel61.setText("Personas");
-
-        jLabel62.setText("Familiares");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3)
-                        .addContainerGap())
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel62)
-                                .addGap(18, 18, 18)
-                                .addComponent(FamiliaresModificarCb, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel54)
-                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel55)
-                                        .addGap(50, 50, 50)
-                                        .addComponent(ColorDePielModificarBt))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel56)
-                                            .addComponent(jLabel60))
-                                        .addGap(50, 50, 50)
-                                        .addComponent(IngredientesModificarTf, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel61)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel57)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(FamiliarPadreModificarCb, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel58)
-                                                    .addComponent(jLabel59))
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                                        .addGap(23, 23, 23)
-                                                        .addComponent(EliminarEmpleadoModificarCb, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(AgregarEmpleadoModificarCb, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(EliminarEmpleadoModificarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(AgregarEmpleadoModificarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addGap(0, 71, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(EliminarModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(GuardarCambiosModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1260,16 +1189,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(ActualizarControlesModificarBt)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(ActualizarControlesModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EliminarModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(GatosModificarRb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(BaleadasModificarRb))
-                            .addComponent(jLabel7))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(GatosModificarRb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BaleadasModificarRb))
+                    .addComponent(jLabel7))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1289,71 +1217,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboBoxModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ActualizarControlesModificarBt))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel54)
-                    .addComponent(jLabel61))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel55)
-                            .addComponent(ColorDePielModificarBt))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel58)
-                            .addComponent(AgregarEmpleadoModificarCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AgregarEmpleadoModificarBt))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel59)
-                            .addComponent(EliminarEmpleadoModificarCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EliminarEmpleadoModificarBt))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel57)
-                            .addComponent(FamiliarPadreModificarCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel60)
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(IngredientesModificarTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel56))))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(EliminarModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GuardarCambiosModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel62)
-                            .addComponent(FamiliaresModificarCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(ActualizarControlesModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EliminarModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificar", jPanel3);
 
-        jLabel63.setText("Articulo");
+        jLabel63.setText("Artículo");
 
         jLabel65.setText("Cliente");
 
         jLabel66.setText("Empleado");
 
-        jRadioButton1.setText("Venta de Baleadas");
-
-        jRadioButton2.setText("Venta de Gatos");
-
-        jButton1.setText("Agregar al carro");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        NuevaVenta.add(BaleadasNuevaVentaRb);
+        BaleadasNuevaVentaRb.setText("Baleadas");
+        BaleadasNuevaVentaRb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BaleadasNuevaVentaRbActionPerformed(evt);
+            }
+        });
+
+        NuevaVenta.add(GatosNuevaVentaRb);
+        GatosNuevaVentaRb.setText("Gatos");
+        GatosNuevaVentaRb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GatosNuevaVentaRbActionPerformed(evt);
+            }
+        });
+
+        AgregarAlCarroNuevaVentaBt.setText("Agregar al carro");
+        AgregarAlCarroNuevaVentaBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarAlCarroNuevaVentaBtActionPerformed(evt);
             }
         });
 
@@ -1361,7 +1257,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel64.setText("Carrito");
 
-        jButton2.setText("Realizar Venta");
+        RealizarVentaNuevaVentaBt.setText("Realizar Venta");
+        RealizarVentaNuevaVentaBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RealizarVentaNuevaVentaBtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1369,61 +1270,67 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AgregarAlCarroNuevaVentaBt, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addComponent(jLabel63)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                        .addComponent(ArticuloNuevaVentaCb, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel65)
+                            .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton2))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel6Layout.createSequentialGroup()
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton1)
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel65)
-                                        .addComponent(jLabel63)
-                                        .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jComboBox3, 0, 147, Short.MAX_VALUE))))
-                            .addGap(130, 130, 130)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel64)
-                                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(97, Short.MAX_VALUE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(EmpleadoNuevaVentaCb, 0, 147, Short.MAX_VALUE)
+                            .addComponent(ClienteNuevaVentaCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel64)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(120, 120, 120))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(BaleadasNuevaVentaRb)
+                .addGap(31, 31, 31)
+                .addComponent(GatosNuevaVentaRb)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addGap(8, 8, 8)
-                .addComponent(jLabel64)
-                .addGap(18, 18, 18)
+                    .addComponent(BaleadasNuevaVentaRb)
+                    .addComponent(GatosNuevaVentaRb))
+                .addGap(27, 27, 27)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel64)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel66)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(EmpleadoNuevaVentaCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel65)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ClienteNuevaVentaCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel63)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ArticuloNuevaVentaCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1))
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(257, Short.MAX_VALUE))
+                        .addComponent(AgregarAlCarroNuevaVentaBt)))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Nueva venta", jPanel6);
@@ -1432,17 +1339,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jRadioButton4.setText("Ventas de gatos");
 
-        jRadioButton5.setText("Ventas totales");
-
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "", "", "", " "
             }
         ));
         jScrollPane10.setViewportView(jTable1);
@@ -1456,12 +1358,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jRadioButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jRadioButton4)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButton5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1470,11 +1370,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5))
+                    .addComponent(jRadioButton4))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Reportes", jPanel7);
@@ -1500,25 +1399,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Archivo");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Abrir");
-        jMenu1.add(jMenuItem1);
+        AbrirMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        AbrirMn.setText("Abrir");
+        jMenu1.add(AbrirMn);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Guardar");
-        jMenu1.add(jMenuItem2);
+        GuardarMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+        GuardarMn.setText("Guardar");
+        GuardarMn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarMnActionPerformed(evt);
+            }
+        });
+        jMenu1.add(GuardarMn);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Guardar como");
-        jMenu1.add(jMenuItem3);
+        GuardarComoMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        GuardarComoMn.setText("Guardar como");
+        jMenu1.add(GuardarComoMn);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        jMenuItem4.setText("Acerca de");
-        jMenu1.add(jMenuItem4);
+        AcercaDeMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        AcercaDeMn.setText("Acerca de");
+        jMenu1.add(AcercaDeMn);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem5.setText("Salir");
-        jMenu1.add(jMenuItem5);
+        SalirMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        SalirMn.setText("Salir");
+        jMenu1.add(SalirMn);
 
         jMenuBar1.add(jMenu1);
 
@@ -1571,6 +1475,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void JefeAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JefeAgregarBtActionPerformed
         // TODO add your handling code here:
+        Modificar=0;
         EmpleadosTemporal.clear();
         AgregarJefe.setVisible(true);
         AgregarJefe.pack();
@@ -1588,17 +1493,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 Empleados.get(
                         AgregarEmpleadoAgregarJefeCb.getSelectedIndex()));
     }//GEN-LAST:event_AgregarEmpleadoAgregarJefeBtActionPerformed
-
+    //0-Jefe de Cocina 1-Jefe de Baleadas 2-Jefe de Gatos
     private void AgregarJefeAgregarJefeBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarJefeAgregarJefeBtActionPerformed
         // TODO add your handling code here:
-        Jefes.add(new Jefe());
-        int pos = Jefes.size() - 1;
+        int pos = 0;
+
+        if (SeccionDeTrabajoAgregarJefeCb.getSelectedIndex() == 0) {
+            pos = 0;
+        }
+        if (SeccionDeTrabajoAgregarJefeCb.getSelectedIndex() == 1) {
+            pos = 1;
+        }
+        if (SeccionDeTrabajoAgregarJefeCb.getSelectedIndex() == 2) {
+            pos = 2;
+        }
+
         Jefes.get(pos).setNombre(NombreAgregarJefeTf.getText());
         Jefes.get(pos).setID(IDAgregarJefeTf.getText());
         try {
             Jefes.get(pos).setEdad(Integer.parseInt(EdadAgregarJefeTf.getText()));
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(AgregarJefe, "¡Agregado!");
+            JOptionPane.showMessageDialog(AgregarJefe, "Hubo un error en la edad");
         }
         Jefes.get(pos).setNacionalidad(NacionalidadAgregarJefeTf.getText());
         Jefes.get(pos).setLugarDeNacimiento(LugarDeNacimientoAgregarJefeTf.getText());
@@ -1614,8 +1529,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void AgregarEmpleadoAgregarEmpleadoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarEmpleadoAgregarEmpleadoBtActionPerformed
         // TODO add your handling code here:
-        Empleados.add(new Empleado());
-        int pos = Empleados.size() - 1;
+        int pos = 0;
+
+        if (Modificar == 0) {
+            Empleados.add(new Empleado());
+            pos = Empleados.size() - 1;
+        } else {
+            pos = ComboBoxModificar.getSelectedIndex();
+        }
         Empleados.get(pos).setNombre(NombreAgregarEmpleadoTf.getText());
         Empleados.get(pos).setID(IDAgregarEmpleadoTf.getText());
         try {
@@ -1657,8 +1578,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void AgregarClienteAgregarClienteBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarClienteAgregarClienteBtActionPerformed
         // TODO add your handling code here:
-        Clientes.add(new Cliente());
-        int pos = Clientes.size() - 1;
+
+        int pos = 0;
+        if (Modificar == 0) {
+            Clientes.add(new Cliente());
+            pos = Clientes.size() - 1;
+        } else {
+            pos = ComboBoxModificar.getSelectedIndex();
+        }
         Clientes.get(pos).setNombre(NombreAgregarClienteTf.getText());
         Clientes.get(pos).setID(IDAgregarClienteTf.getText());
         try {
@@ -1682,6 +1609,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void ClienteAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteAgregarBtActionPerformed
         // TODO add your handling code here:
+        Modificar=0;
         AgregarCliente.setVisible(true);
         AgregarCliente.pack();
         AgregarCliente.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -1703,8 +1631,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void AgregarFamiliarAgregarFamiliarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarFamiliarAgregarFamiliarBtActionPerformed
         // TODO add your handling code here:
-        Familiares.add(new Familiar());
-        int pos = Familiares.size() - 1;
+
+        int pos = 0;
+        if (Modificar == 0) {
+            Familiares.add(new Familiar());
+            pos = Familiares.size() - 1;
+        } else {
+            pos = ComboBoxModificar.getSelectedIndex();
+        }
         Familiares.get(pos).setNombre(NombreAgregarFamiliarTf.getText());
         Familiares.get(pos).setID(IDAgregarFamiliarTf.getText());
         try {
@@ -1724,6 +1658,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void FamiliarAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FamiliarAgregarBtActionPerformed
         // TODO add your handling code here:
+        Modificar=0;
         FamiliaresTemporal.clear();
         AgregarFamiliar.setVisible(true);
         AgregarFamiliar.pack();
@@ -1740,6 +1675,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void GatoAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GatoAgregarBtActionPerformed
         // TODO add your handling code here:
+        Modificar=0;
         AgregarGato.setVisible(true);
         AgregarGato.pack();
         AgregarGato.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -1747,6 +1683,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void EmpleadoAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadoAgregarBtActionPerformed
         // TODO add your handling code here:
+        Modificar=0;
         AgregarEmpleado.setVisible(true);
         AgregarEmpleado.pack();
         AgregarEmpleado.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -1754,27 +1691,33 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void AgregarGatoAgregarGatoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarGatoAgregarGatoBtActionPerformed
         // TODO add your handling code here:
-        Articulos.add(new Gato());
-        int pos = Articulos.size() - 1;
+
+        int pos = 0;
+        if (Modificar==0) {
+            Gatos.add(new Gato());
+            pos = Gatos.size() - 1;
+        } else {
+            pos = ComboBoxModificar.getSelectedIndex();
+        }
         try {
-            Articulos.get(pos).setPrecio(
+            Gatos.get(pos).setPrecio(
                     Float.parseFloat(PrecioAgregarGatoTf.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con el precio");
         }
         try {
-            ((Gato) (Articulos.get(pos))).setPeso(
+            ((Gato) (Gatos.get(pos))).setPeso(
                     Float.parseFloat(PrecioAgregarGatoTf.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con el peso");
         }
         try {
-            ((Gato) (Articulos.get(pos))).setAltura(
+            ((Gato) (Gatos.get(pos))).setAltura(
                     Float.parseFloat(AlturaAgregarGatoTf.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con la altura");
         }
-        Gatos.add((Gato) Articulos.get(pos));
+        Articulos.add((Gato) Gatos.get(pos));
         JOptionPane.showMessageDialog(AgregarGato, "¡Agregado!");
         AgregarGato.dispose();
     }//GEN-LAST:event_AgregarGatoAgregarGatoBtActionPerformed
@@ -1786,22 +1729,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void AgregarBaleadaAgregarBaleadaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarBaleadaAgregarBaleadaBtActionPerformed
         // TODO add your handling code here:
-        Articulos.add(new Baleada());
-        int pos = Articulos.size() - 1;
+        int pos = 0;
+        if (Modificar==0) {
+            Baleadas.add(new Baleada());
+            pos = Baleadas.size() - 1;
+        } else {
+            pos = ComboBoxModificar.getSelectedIndex();
+        }
         try {
-            Articulos.get(pos).setPrecio(
+            Baleadas.get(pos).setPrecio(
                     Float.parseFloat(PrecioAgregarBaleadaTf.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarBaleada, "Hubo un problema con el precio");
         }
-        ((Baleada) Articulos.get(pos)).setIngredientes(IngredientesTemporal);
-        Baleadas.add((Baleada) Articulos.get(pos));
+        ((Baleada) Baleadas.get(pos)).setIngredientes(IngredientesTemporal);
+        Articulos.add((Baleada) Baleadas.get(pos));
         JOptionPane.showMessageDialog(AgregarBaleada, "¡Agregado!");
         AgregarBaleada.dispose();
     }//GEN-LAST:event_AgregarBaleadaAgregarBaleadaBtActionPerformed
 
     private void BaleadaAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaleadaAgregarBtActionPerformed
         // TODO add your handling code here:
+        Modificar=0;
         AgregarBaleada.setVisible(true);
         AgregarBaleada.pack();
         IngredientesTemporal.clear();
@@ -1897,34 +1846,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 }
         ));
         DefaultTableModel modelo = (DefaultTableModel) TablaListar.getModel();
-        for (Cliente t : Clientes) {
+        for (Gato t : Gatos) {
             Object[] fila = {
-                t.getNombre(),
-                t.getID(),
-                t.getEdad(),
-                t.getNacionalidad(),
-                t.getLugarDeNacimiento(),
-                t.getColorDePiel(),
-                t.getDinero()
+                t.getPrecio(),
+                t.getPeso(),
+                t.getAltura()
             };
             modelo.addRow(fila);
         }
         TablaListar.setModel(modelo);
     }//GEN-LAST:event_GatosListarRbActionPerformed
-    
-    private void deshabilitarBotones() {
-        ArbolModificar.setEnabled(false);
-        FamiliaresModificarCb.setEnabled(false);
-        ColorDePielModificarBt.setEnabled(false);
-        AgregarEmpleadoModificarCb.setEnabled(false);
-        AgregarEmpleadoModificarBt.setEnabled(false);
-        EliminarEmpleadoModificarCb.setEnabled(false);
-        EliminarEmpleadoModificarBt.setEnabled(false);
-        FamiliarPadreModificarCb.setEnabled(false);
-        IngredientesModificarTf.setEnabled(false);
-        EliminarModificarBt.setEnabled(false);
-        GuardarCambiosModificarBt.setEnabled(false);
-    }
+
 
     private void JefesModificarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JefesModificarRbActionPerformed
         // TODO add your handling code here:
@@ -1934,7 +1866,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         ComboBoxModificar.setModel(modelo);
 
-        deshabilitarBotones();
+
     }//GEN-LAST:event_JefesModificarRbActionPerformed
 
     private void EmpleadosModificarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosModificarRbActionPerformed
@@ -1944,8 +1876,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             modelo.addElement(Jefe1);
         }
         ComboBoxModificar.setModel(modelo);
-        
-        deshabilitarBotones();
+
+
     }//GEN-LAST:event_EmpleadosModificarRbActionPerformed
 
     private void ClientesModificarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesModificarRbActionPerformed
@@ -1955,8 +1887,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             modelo.addElement(Jefe1);
         }
         ComboBoxModificar.setModel(modelo);
-        
-        deshabilitarBotones();
+
+
     }//GEN-LAST:event_ClientesModificarRbActionPerformed
 
     private void FamiliaresModificarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FamiliaresModificarRbActionPerformed
@@ -1966,8 +1898,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             modelo.addElement(Jefe1);
         }
         ComboBoxModificar.setModel(modelo);
-        
-        deshabilitarBotones();
+
+
     }//GEN-LAST:event_FamiliaresModificarRbActionPerformed
 
     private void GatosModificarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GatosModificarRbActionPerformed
@@ -1977,8 +1909,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             modelo.addElement(Jefe1);
         }
         ComboBoxModificar.setModel(modelo);
-        
-        deshabilitarBotones();
+
+
     }//GEN-LAST:event_GatosModificarRbActionPerformed
 
     private void BaleadasModificarRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaleadasModificarRbActionPerformed
@@ -1988,13 +1920,194 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             modelo.addElement(Jefe1);
         }
         ComboBoxModificar.setModel(modelo);
-        
-        deshabilitarBotones();
+
+
     }//GEN-LAST:event_BaleadasModificarRbActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AgregarAlCarroNuevaVentaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarAlCarroNuevaVentaBtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        try {
+            if (BaleadasNuevaVentaRb.isSelected()) {
+                ArticulosTemporal.add(
+                        Baleadas.get(ArticuloNuevaVentaCb.getSelectedIndex()));
+            }
+            if (GatosNuevaVentaRb.isSelected()) {
+                ArticulosTemporal.add(
+                        Gatos.get(ArticuloNuevaVentaCb.getSelectedIndex()));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "No ha agregado suficientes items, agregue e intente de nuevo.");
+        }
+        actualizarCarrito();
+    }//GEN-LAST:event_AgregarAlCarroNuevaVentaBtActionPerformed
+    private void actualizarCarrito() {
+        DefaultListModel modelo = new DefaultListModel();
+        for (Articulo articulo : ArticulosTemporal) {
+            modelo.addElement(articulo);
+        }
+        CarritoNuevaVentaLi.setModel(modelo);
+    }
+    private void BaleadasNuevaVentaRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaleadasNuevaVentaRbActionPerformed
+        // TODO add your handling code here:
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+        for (Empleado empleado : Jefes.get(1).getEmpleados()) {
+            modelo.addElement(empleado);
+        }
+
+        EmpleadoNuevaVentaCb.setModel(modelo);
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (Cliente Cliente1 : Clientes) {
+            modelo1.addElement(Cliente1);
+        }
+        ClienteNuevaVentaCb.setModel(modelo1);
+        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+        for (Baleada Baleada1 : Baleadas) {
+            modelo2.addElement(Baleada1);
+        }
+        ArticuloNuevaVentaCb.setModel(modelo2);
+        ArticulosTemporal.clear();
+        AgregarAlCarroNuevaVentaBt.setEnabled(true);
+        RealizarVentaNuevaVentaBt.setEnabled(true);
+        actualizarCarrito();
+    }//GEN-LAST:event_BaleadasNuevaVentaRbActionPerformed
+
+    private void SeccionDeTrabajoAgregarJefeCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeccionDeTrabajoAgregarJefeCbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SeccionDeTrabajoAgregarJefeCbActionPerformed
+
+    private void GatosNuevaVentaRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GatosNuevaVentaRbActionPerformed
+        // TODO add your handling code here:
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Empleado empleado : Jefes.get(2).getEmpleados()) {
+            modelo.addElement(empleado);
+        }
+        EmpleadoNuevaVentaCb.setModel(modelo);
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        for (Cliente Cliente1 : Clientes) {
+            modelo1.addElement(Cliente1);
+        }
+        ClienteNuevaVentaCb.setModel(modelo1);
+        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+        for (Gato Baleada1 : Gatos) {
+            modelo2.addElement(Baleada1);
+        }
+        ArticuloNuevaVentaCb.setModel(modelo2);
+        ArticulosTemporal.clear();
+        AgregarAlCarroNuevaVentaBt.setEnabled(true);
+        RealizarVentaNuevaVentaBt.setEnabled(true);
+        actualizarCarrito();
+    }//GEN-LAST:event_GatosNuevaVentaRbActionPerformed
+
+    private void RealizarVentaNuevaVentaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RealizarVentaNuevaVentaBtActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (Ordenes.size() == 2) {
+                for (int i = 0; i < Ordenes.size(); i++) {
+                    Ventas.add(Ordenes.get(i));
+                }
+                Ordenes.clear();
+            }
+            Ordenes.add(new Venta());
+            int pos = Ordenes.size() - 1;
+            if (BaleadasNuevaVentaRb.isSelected()) {
+                Ordenes.get(pos).setAtendente(
+                        Jefes.get(1).getEmpleados().get(
+                                EmpleadoNuevaVentaCb.getSelectedIndex()));
+            }
+            if (!BaleadasNuevaVentaRb.isSelected()) {
+                Ordenes.get(pos).setAtendente(
+                        Jefes.get(2).getEmpleados().get(
+                                EmpleadoNuevaVentaCb.getSelectedIndex()));
+            }
+            Ordenes.get(pos).setClienteDeVenta(
+                    Clientes.get(ClienteNuevaVentaCb.getSelectedIndex()));
+            Ordenes.get(pos).setArticulos(ArticulosTemporal);
+            Ordenes.get(pos).setTotal();
+            Ordenes.get(pos).setCantidadDeArticulos();
+            Ordenes.get(pos).setFechaDeLaOrden(new Date());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "¡Hace falta agregar elementos!");
+        }
+        JOptionPane.showMessageDialog(this, "¡Venta exitosa!");
+    }//GEN-LAST:event_RealizarVentaNuevaVentaBtActionPerformed
+
+    private void ActualizarControlesModificarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarControlesModificarBtActionPerformed
+        // TODO add your handling code here:
+        Modificar=0;
+        int pos=ComboBoxModificar.getSelectedIndex();
+        if (JefesModificarRb.isSelected()) {
+            AgregarJefe.setVisible(true);
+            NombreAgregarJefeTf.setText(Jefes.get(pos).getNombre());
+            IDAgregarJefeTf.setText(Jefes.get(pos).getID());
+            String Edad="";
+            Edad+=Jefes.get(pos).getEdad();
+            EdadAgregarJefeTf.setText(Edad);
+            NacionalidadAgregarJefeTf.setText(Jefes.get(pos).getNacionalidad());
+            LugarDeNacimientoAgregarClienteTf.setText(Jefes.get(pos).getLugarDeNacimiento());
+            ColorDePielAgregarClienteBt.setBackground(Jefes.get(pos).getColorDePiel());
+        }
+        if (EmpleadosModificarRb.isSelected()) {
+            AgregarEmpleado.setVisible(true);
+            NombreAgregarEmpleadoTf.setText(Empleados.get(pos).getNombre());
+            IDAgregarEmpleadoTf.setText(Empleados.get(pos).getID());
+            String Edad="";
+            Edad+=Empleados.get(pos).getEdad();
+            EdadAgregarEmpleadoTf.setText(Edad);
+            NacionalidadAgregarEmpleadoTf.setText(Empleados.get(pos).getNacionalidad());
+            LugarDeNacimientoAgregarClienteTf.setText(Empleados.get(pos).getLugarDeNacimiento());
+            ColorDePielAgregarClienteBt.setBackground(Empleados.get(pos).getColorDePiel());
+        }
+        if (ClientesModificarRb.isSelected()) {
+            AgregarCliente.setVisible(true);
+            NombreAgregarClienteTf.setText(Clientes.get(pos).getNombre());
+            IDAgregarClienteTf.setText(Clientes.get(pos).getID());
+            String Edad="";
+            Edad+=Clientes.get(pos).getEdad();
+            EdadAgregarClienteTf.setText(Edad);
+            NacionalidadAgregarClienteTf.setText(Clientes.get(pos).getNacionalidad());
+            LugarDeNacimientoAgregarClienteTf.setText(Clientes.get(pos).getLugarDeNacimiento());
+            ColorDePielAgregarClienteBt.setBackground(Clientes.get(pos).getColorDePiel());
+        }
+        if (FamiliaresModificarRb.isSelected()) {
+            AgregarFamiliar.setVisible(true);
+            NombreAgregarFamiliarTf.setText(Familiares.get(pos).getNombre());
+            IDAgregarFamiliarTf.setText(Familiares.get(pos).getID());
+            String Edad="";
+            Edad+=Familiares.get(pos).getEdad();
+            EdadAgregarFamiliarTf.setText(Edad);
+            NacionalidadAgregarFamiliarTf.setText(Familiares.get(pos).getNacionalidad());
+            LugarDeNacimientoAgregarFamiliarTf.setText(Familiares.get(pos).getLugarDeNacimiento());
+            ColorDePielAgregarFamiliarBt.setBackground(Familiares.get(pos).getColorDePiel());
+        }
+        if (GatosModificarRb.isSelected()) {
+            AgregarGato.setVisible(true);
+            String precio="";
+            precio+=Gatos.get(pos).getPrecio();
+            PrecioAgregarGatoTf.setText(precio);
+        }
+        if (BaleadasModificarRb.isSelected()) {
+            AgregarBaleada.setVisible(true);
+            String precio="";
+            precio+=Baleadas.get(pos).getPrecio();
+            PrecioAgregarBaleadaTf.setText(precio);
+        }
+    }//GEN-LAST:event_ActualizarControlesModificarBtActionPerformed
+
+    private void GuardarMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarMnActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showSaveDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File dir = fileChooser.getSelectedFile();
+            boolean fueCreado = dir.mkdir();
+            if (fueCreado) {
+                JOptionPane.showMessageDialog(this, "Fué creado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "El directorio no fue creado");
+            }
+        }
+    }//GEN-LAST:event_GuardarMnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2032,7 +2145,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AbrirMn;
+    private javax.swing.JMenuItem AcercaDeMn;
     private javax.swing.JButton ActualizarControlesModificarBt;
+    private javax.swing.JButton AgregarAlCarroNuevaVentaBt;
     private javax.swing.JDialog AgregarBaleada;
     private javax.swing.JButton AgregarBaleadaAgregarBaleadaBt;
     private javax.swing.JDialog AgregarCliente;
@@ -2041,8 +2157,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton AgregarEmpleadoAgregarEmpleadoBt;
     private javax.swing.JButton AgregarEmpleadoAgregarJefeBt;
     private javax.swing.JComboBox<String> AgregarEmpleadoAgregarJefeCb;
-    private javax.swing.JButton AgregarEmpleadoModificarBt;
-    private javax.swing.JComboBox<String> AgregarEmpleadoModificarCb;
     private javax.swing.JDialog AgregarFamiliar;
     private javax.swing.JButton AgregarFamiliarAgregarFamiliarBt;
     private javax.swing.ButtonGroup AgregarFamiliarBg;
@@ -2054,43 +2168,43 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDialog AgregarJefe;
     private javax.swing.JButton AgregarJefeAgregarJefeBt;
     private javax.swing.JTextField AlturaAgregarGatoTf;
-    private javax.swing.JTree ArbolModificar;
+    private javax.swing.JComboBox<String> ArticuloNuevaVentaCb;
     private javax.swing.JButton BaleadaAgregarBt;
     private javax.swing.JRadioButton BaleadasListarRb;
     private javax.swing.JRadioButton BaleadasModificarRb;
+    private javax.swing.JRadioButton BaleadasNuevaVentaRb;
     private javax.swing.JList<String> CarritoNuevaVentaLi;
     private javax.swing.JButton ClienteAgregarBt;
+    private javax.swing.JComboBox<String> ClienteNuevaVentaCb;
     private javax.swing.JRadioButton ClientesListarRb;
     private javax.swing.JRadioButton ClientesModificarRb;
     private javax.swing.JButton ColorDePielAgregarClienteBt;
     private javax.swing.JButton ColorDePielAgregarEmpleadoBt;
     private javax.swing.JButton ColorDePielAgregarFamiliarBt;
     private javax.swing.JButton ColorDePielAgregarJefeBt;
-    private javax.swing.JButton ColorDePielModificarBt;
     private javax.swing.JComboBox<String> ComboBoxModificar;
     private javax.swing.JTextField DineroAgregarClienteTf;
     private javax.swing.JTextField EdadAgregarClienteTf;
     private javax.swing.JTextField EdadAgregarEmpleadoTf;
     private javax.swing.JTextField EdadAgregarFamiliarTf;
     private javax.swing.JTextField EdadAgregarJefeTf;
-    private javax.swing.JButton EliminarEmpleadoModificarBt;
-    private javax.swing.JComboBox<String> EliminarEmpleadoModificarCb;
     private javax.swing.JButton EliminarModificarBt;
     private javax.swing.JButton EmpleadoAgregarBt;
+    private javax.swing.JComboBox<String> EmpleadoNuevaVentaCb;
     private javax.swing.JRadioButton EmpleadosListarRb;
     private javax.swing.JRadioButton EmpleadosModificarRb;
     private javax.swing.JComboBox<String> EstadoAgregarEmpleadoCb;
     private javax.swing.JButton FamiliarAgregarBt;
     private javax.swing.JComboBox<String> FamiliarHijoAgregarFamiliarCb;
     private javax.swing.JComboBox<String> FamiliarPadreAgregarFamiliarCb;
-    private javax.swing.JComboBox<String> FamiliarPadreModificarCb;
     private javax.swing.JRadioButton FamiliaresListarRb;
-    private javax.swing.JComboBox<String> FamiliaresModificarCb;
     private javax.swing.JRadioButton FamiliaresModificarRb;
     private javax.swing.JButton GatoAgregarBt;
     private javax.swing.JRadioButton GatosListarRb;
     private javax.swing.JRadioButton GatosModificarRb;
-    private javax.swing.JButton GuardarCambiosModificarBt;
+    private javax.swing.JRadioButton GatosNuevaVentaRb;
+    private javax.swing.JMenuItem GuardarComoMn;
+    private javax.swing.JMenuItem GuardarMn;
     private javax.swing.JSpinner HoraDeLlegadaAgregarEmpleadoSp;
     private javax.swing.JSpinner HoraDeSalidaAgregarEmpleadoSp;
     private javax.swing.JTextField IDAgregarClienteTf;
@@ -2098,7 +2212,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField IDAgregarFamiliarTf;
     private javax.swing.JTextField IDAgregarJefeTf;
     private javax.swing.JTextField IngredienteAgregarBaleadaTf;
-    private javax.swing.JTextField IngredientesModificarTf;
     private javax.swing.JButton JefeAgregarBt;
     private javax.swing.JRadioButton JefesListarRb;
     private javax.swing.JRadioButton JefesModificarRb;
@@ -2116,18 +2229,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField NombreAgregarEmpleadoTf;
     private javax.swing.JTextField NombreAgregarFamiliarTf;
     private javax.swing.JTextField NombreAgregarJefeTf;
+    private javax.swing.ButtonGroup NuevaVenta;
     private javax.swing.JTextField PesoAgregarGatoTf;
     private javax.swing.JTextField PrecioAgregarBaleadaTf;
     private javax.swing.JTextField PrecioAgregarGatoTf;
+    private javax.swing.JButton RealizarVentaNuevaVentaBt;
+    private javax.swing.ButtonGroup Reportes;
+    private javax.swing.JMenuItem SalirMn;
     private javax.swing.JComboBox<String> SeccionDeTrabajoAgregarJefeCb;
     private javax.swing.JTextField SueldoAgregarEmpleadoTf;
     private javax.swing.JTable TablaListar;
-    private javax.swing.JTable TablaModificar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2178,30 +2289,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -2209,21 +2307,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
@@ -2232,9 +2327,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTree jTree3;
     private javax.swing.JTree jTree4;
     private javax.swing.JTree jTree5;
+    private javax.swing.JTree jTree6;
     // End of variables declaration//GEN-END:variables
     static ArrayList<Persona> Personas = new ArrayList();
     static ArrayList<Jefe> Jefes = new ArrayList();
+    //0_Cocina 1_Baleadas 3_Gatos
     static ArrayList<Empleado> Empleados = new ArrayList();
     static ArrayList<Cliente> Clientes = new ArrayList();
     static ArrayList<Familiar> Familiares = new ArrayList();
@@ -2245,8 +2342,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     static ArrayList<Empleado> EmpleadosTemporal = new ArrayList();
     static ArrayList<Familiar> FamiliaresTemporal = new ArrayList();
     static ArrayList<String> IngredientesTemporal = new ArrayList();
-    static ArrayList<Articulo> ArticulosTemporal=new ArrayList();
-    static ArrayList<Orden> Ordenes=new ArrayList();
-    static ArrayList<Orden> Ventas=new ArrayList();
-    static int cantidadDeOrdenes=0;
+    static ArrayList<Articulo> ArticulosTemporal = new ArrayList();
+    static ArrayList<Venta> Ordenes = new ArrayList();
+    static ArrayList<Venta> Ventas = new ArrayList();
+    static int Tickets = 0;
+    static int Modificar = 0;
 }

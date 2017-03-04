@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author ofici
  */
-class Orden {
+class Venta {
 
     private ArrayList<Articulo> Articulos = new ArrayList();
     private Cliente ClienteDeVenta;
@@ -21,10 +21,10 @@ class Orden {
     private float Total;
     private Date FechaDeLaOrden;
 
-    public Orden() {
+    public Venta() {
     }
 
-    public Orden(Cliente ClienteDeVenta, Empleado Atendente, int CantidadDeArticulos, float Total, Date FechaDeLaOrden) {
+    public Venta(Cliente ClienteDeVenta, Empleado Atendente, int CantidadDeArticulos, float Total, Date FechaDeLaOrden) {
         this.ClienteDeVenta = ClienteDeVenta;
         this.Atendente = Atendente;
         this.CantidadDeArticulos = CantidadDeArticulos;
@@ -60,16 +60,19 @@ class Orden {
         return CantidadDeArticulos;
     }
 
-    public void setCantidadDeArticulos(int CantidadDeArticulos) {
-        this.CantidadDeArticulos = CantidadDeArticulos;
+    public void setCantidadDeArticulos() {
+        this.CantidadDeArticulos = Articulos.size();
     }
 
     public float getTotal() {
         return Total;
     }
 
-    public void setTotal(float Total) {
-        this.Total = Total;
+    public void setTotal() {
+        this.Total=0;
+        for (int i = 0; i < Articulos.size(); i++) {
+            this.Total += Articulos.get(i).getPrecio();
+        }
     }
 
     public Date getFechaDeLaOrden() {

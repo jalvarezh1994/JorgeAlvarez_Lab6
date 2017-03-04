@@ -16,9 +16,12 @@ class Familiar extends Persona{
     
     
     private Familiar Padre;
+    private Persona Padre1;
     private ArrayList<Familiar> Hijos = new ArrayList();
 
     public Familiar() {
+        super();
+        Padre1=Padre;
     }
 
     public Familiar(int Edad, String ID, String Nacionalidad, String LugarDeNacimiento, String Nombre, Color ColorDePiel, Familiar Padre) {
@@ -29,6 +32,7 @@ class Familiar extends Persona{
         this.Nombre = Nombre;
         this.ColorDePiel = ColorDePiel;
         this.Padre = Padre;
+        Padre1=Padre;
     }
 
     public int getEdad() {

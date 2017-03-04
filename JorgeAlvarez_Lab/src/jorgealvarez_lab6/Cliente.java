@@ -17,7 +17,7 @@ public class Cliente extends Persona {
 
     private int Ticket;
     private float Dinero;
-    private ArrayList<Orden> Ordenes = new ArrayList();
+    private ArrayList<Venta> Ordenes = new ArrayList();
 
     public Cliente() {
         super();
@@ -50,11 +50,11 @@ public class Cliente extends Persona {
         this.Dinero = Dinero;
     }
 
-    public ArrayList<Orden> getOrdenes() {
+    public ArrayList<Venta> getOrdenes() {
         return Ordenes;
     }
 
-    public void setOrdenes(ArrayList<Orden> Ordenes) {
+    public void setOrdenes(ArrayList<Venta> Ordenes) {
         this.Ordenes = Ordenes;
     }
 
