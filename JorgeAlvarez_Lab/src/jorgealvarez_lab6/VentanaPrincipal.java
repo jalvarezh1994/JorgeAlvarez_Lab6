@@ -165,6 +165,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ArbolInicio = new javax.swing.JTree();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         JefeAgregarBt = new javax.swing.JButton();
@@ -866,6 +867,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ArbolInicio.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(ArbolInicio);
 
+        jButton1.setText("Actualizar árbol");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -873,13 +881,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(391, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jButton1)
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1428,6 +1442,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         SalirMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         SalirMn.setText("Salir");
+        SalirMn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirMnActionPerformed(evt);
+            }
+        });
         jMenu1.add(SalirMn);
 
         jMenuBar1.add(jMenu1);
@@ -2104,25 +2123,42 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
         int seleccion = fileChooser.showSaveDialog(this);
-        if (seleccion == JFileChooser.APPROVE_OPTION) {
+        if (seleccion == JFileChooser.APPROVE_OPTION&&!yaGuardado) {
             File dir = fileChooser.getSelectedFile();
             boolean fueCreado = dir.mkdir();
             Directorios.add(dir);
-            DefaultTreeModel arbolModelo = new DefaultTreeModel(
-                    (TreeNode) ArbolInicio.getModel().getRoot());
-            DefaultMutableTreeNode nodo=new DefaultMutableTreeNode();
-            arbolModelo.reload(nodo);
+            DefaultMutableTreeNode Raiz=new DefaultMutableTreeNode();
+            DefaultTreeModel modeloArbol=(DefaultTreeModel) ArbolInicio.getModel();
+            modeloArbol.setRoot(Raiz);
+            DefaultMutableTreeNode directorio=new DefaultMutableTreeNode(dir);
+            Raiz.add(directorio);
             if (fueCreado) {
+                CarpetaGuardada=dir;
+                yaGuardado=true;
+                guardarTodo();
                 JOptionPane.showMessageDialog(this, "Fué creado exitosamente");
             } else {
                 JOptionPane.showMessageDialog(this, "El directorio no fue creado");
             }
+        }else
+        if (yaGuardado) {
+            
         }
+        
     }//GEN-LAST:event_GuardarMnActionPerformed
-
+    
     private void PrincipalTpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PrincipalTpStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_PrincipalTpStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void SalirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_SalirMnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2256,6 +2292,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> SeccionDeTrabajoAgregarJefeCb;
     private javax.swing.JTextField SueldoAgregarEmpleadoTf;
     private javax.swing.JTable TablaListar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2368,4 +2405,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     JColorChooser jcc = new JColorChooser();
     boolean Guardar = false;
 
+    static boolean yaGuardado=false;
+    static File CarpetaGuardada;
+    static void guardarTodo(){
+        try {
+            FileWriter fw=new FileWriter(CarpetaGuardada);
+            BufferedWriter bw=new BufferedWriter(fw);
+            bw.write("high");
+        } catch (Exception e) {
+        }
+    }
 }
