@@ -5,8 +5,10 @@
  */
 package jorgealvarez_lab6;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Date;
@@ -161,11 +163,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         AgregarBaleadaAgregarBaleadaBt = new javax.swing.JButton();
         NuevaVenta = new javax.swing.ButtonGroup();
         Reportes = new javax.swing.ButtonGroup();
+        MenuInicio = new javax.swing.JPopupMenu();
+        MenuAbrir = new javax.swing.JMenuItem();
         PrincipalTp = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ArbolInicio = new javax.swing.JTree();
-        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         JefeAgregarBt = new javax.swing.JButton();
@@ -855,6 +858,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        MenuInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuInicioMouseClicked(evt);
+            }
+        });
+
+        MenuAbrir.setText("Abrir directorio");
+        MenuAbrir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuAbrirActionPerformed(evt);
+            }
+        });
+        MenuInicio.add(MenuAbrir);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PrincipalTp.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -865,14 +882,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Carpetas de datos");
         ArbolInicio.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(ArbolInicio);
-
-        jButton1.setText("Actualizar árbol");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        ArbolInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ArbolInicioMouseClicked(evt);
             }
         });
+        jScrollPane1.setViewportView(ArbolInicio);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -881,19 +896,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(jButton1)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -972,11 +981,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(BaleadaAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(FamiliarAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                        .addComponent(ClienteAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(EmpleadoAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(FamiliarAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ClienteAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(EmpleadoAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(GatoAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(62, 62, 62)
@@ -1421,6 +1430,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         AbrirMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         AbrirMn.setText("Abrir");
+        AbrirMn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbrirMnActionPerformed(evt);
+            }
+        });
         jMenu1.add(AbrirMn);
 
         GuardarMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
@@ -2121,44 +2135,83 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void GuardarMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarMnActionPerformed
         // TODO add your handling code here:
-        JFileChooser fileChooser = new JFileChooser();
-        int seleccion = fileChooser.showSaveDialog(this);
-        if (seleccion == JFileChooser.APPROVE_OPTION&&!yaGuardado) {
-            File dir = fileChooser.getSelectedFile();
-            boolean fueCreado = dir.mkdir();
-            Directorios.add(dir);
-            DefaultMutableTreeNode Raiz=new DefaultMutableTreeNode();
-            DefaultTreeModel modeloArbol=(DefaultTreeModel) ArbolInicio.getModel();
-            modeloArbol.setRoot(Raiz);
-            DefaultMutableTreeNode directorio=new DefaultMutableTreeNode(dir);
-            Raiz.add(directorio);
-            if (fueCreado) {
-                CarpetaGuardada=dir;
-                yaGuardado=true;
-                guardarTodo();
-                JOptionPane.showMessageDialog(this, "Fué creado exitosamente");
-            } else {
-                JOptionPane.showMessageDialog(this, "El directorio no fue creado");
+
+        if (!yaGuardado) {
+            JFileChooser fileChooser = new JFileChooser();
+            int seleccion = fileChooser.showSaveDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                File dir = fileChooser.getSelectedFile();
+                boolean fueCreado = dir.mkdir();
+                Directorios.add(dir);
+                DefaultMutableTreeNode Raiz = new DefaultMutableTreeNode(ArbolInicio.getModel().getRoot());
+                DefaultTreeModel modeloArbol = (DefaultTreeModel) ArbolInicio.getModel();
+                modeloArbol.setRoot(Raiz);
+                DefaultMutableTreeNode directorio = new DefaultMutableTreeNode(dir);
+                Raiz.add(directorio);
+                if (fueCreado) {
+                    CarpetaGuardada = dir;
+                    yaGuardado = true;
+                    guardarTodo();
+                    JOptionPane.showMessageDialog(this, "Fué creado exitosamente");
+                } else {
+                    JOptionPane.showMessageDialog(this, "El directorio no fue creado");
+                }
             }
-        }else
-        if (yaGuardado) {
-            
+        } else {
+            guardarTodo();
         }
-        
     }//GEN-LAST:event_GuardarMnActionPerformed
-    
+
     private void PrincipalTpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PrincipalTpStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_PrincipalTpStateChanged
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void SalirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMnActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_SalirMnActionPerformed
+    String DirectorioAbrir = "";
+    Object Ruta;
+    private void ArbolInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ArbolInicioMouseClicked
+        // TODO add your handling code here:
+        if (evt.isMetaDown()) {
+            DirectorioAbrir = "";
+            MenuInicio.show(ArbolInicio, evt.getX(), evt.getY());
+            int pos = ArbolInicio.getClosestRowForLocation(evt.getX(), evt.getY());
+            ArbolInicio.setSelectionRow(pos);
+            Ruta = ArbolInicio.getSelectionPath().getLastPathComponent();
+            //System.out.println(Ruta);
+        }
+    }//GEN-LAST:event_ArbolInicioMouseClicked
+
+    private void MenuInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuInicioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuInicioMouseClicked
+
+    private void MenuAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAbrirActionPerformed
+        // TODO add your handling code here:
+        DirectorioAbrir="";
+        DirectorioAbrir+=Ruta;
+        File archivo=new File(DirectorioAbrir);
+        CarpetaGuardada=archivo;
+        yaGuardado=true;
+        JOptionPane.showMessageDialog(this, "Se ha abierto la carpeta: \n"+CarpetaGuardada);
+    }//GEN-LAST:event_MenuAbrirActionPerformed
+
+    private void AbrirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirMnActionPerformed
+        // TODO add your handling code here:
+        JFileChooser jfc = new JFileChooser();
+        int seleccion = jfc.showOpenDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            CarpetaGuardada = jfc.getCurrentDirectory();
+            DefaultTreeModel modeloArbol = (DefaultTreeModel) ArbolInicio.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloArbol.getRoot();
+            DefaultMutableTreeNode carpeta = new DefaultMutableTreeNode(CarpetaGuardada);
+            raiz.add(carpeta);
+            modeloArbol.setRoot(raiz);
+            ArbolInicio.setModel(modeloArbol);
+        }
+    }//GEN-LAST:event_AbrirMnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2272,6 +2325,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField LugarDeNacimientoAgregarEmpleadoTf;
     private javax.swing.JTextField LugarDeNacimientoAgregarFamiliarTf;
     private javax.swing.JTextField LugarDeNacimientoAgregarJefeTf;
+    private javax.swing.JMenuItem MenuAbrir;
+    private javax.swing.JPopupMenu MenuInicio;
     private javax.swing.ButtonGroup ModificarBg;
     private javax.swing.JTextField NacionalidadAgregarClienteTf;
     private javax.swing.JTextField NacionalidadAgregarEmpleadoTf;
@@ -2292,7 +2347,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> SeccionDeTrabajoAgregarJefeCb;
     private javax.swing.JTextField SueldoAgregarEmpleadoTf;
     private javax.swing.JTable TablaListar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2405,13 +2459,58 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     JColorChooser jcc = new JColorChooser();
     boolean Guardar = false;
 
-    static boolean yaGuardado=false;
+    static boolean yaGuardado = false;
     static File CarpetaGuardada;
-    static void guardarTodo(){
+
+    static void guardarTodo() {
+        guardarJefes();
+    }
+
+    static void guardarJefes() {
+        String texto = "";
+        for (Jefe t : Jefes) {
+            texto
+                    += t.getID() + ","
+                    + t.getLugarDeNacimiento() + ","
+                    + t.getNacionalidad() + ","
+                    + t.getNombre() + ","
+                    + t.getSeccionDeTrabajo() + ","
+                    + t.getClientesAtendidos() + ","
+                    + t.getColorDePiel() + ","
+                    + t.getEdad() + ","
+                    + t.getGananciaTotal() + ",";
+            for (Empleado t1 : t.getEmpleados()) {
+                texto+=
+                        t1.getEstado()+"*"+
+                        t1.getEstado()+"*"+
+                        t1.getEstado()+"*"+
+                        t1.getEstado()+"*"
+                        ;
+            }
+        }
+        escribirArchivo("Jefes", texto);
+    }
+
+    static void escribirArchivo(String nombreDeArchivo, String texto) {
         try {
-            FileWriter fw=new FileWriter(CarpetaGuardada);
-            BufferedWriter bw=new BufferedWriter(fw);
-            bw.write("high");
+            String carpeta = "";
+            carpeta += CarpetaGuardada;
+            FileWriter fw = new FileWriter(carpeta + "/" + nombreDeArchivo + ".txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(texto);
+            bw.flush();
+        } catch (Exception e) {
+        }
+    }
+
+    static void cargarTodo() {
+        String archivo = "";
+        archivo += CarpetaGuardada + "/Jefes.txt";
+        try {
+            FileReader fr = new FileReader(archivo);
+            BufferedReader br = new BufferedReader(fr);
+            String Texto = br.toString();
+            System.out.println(Texto);
         } catch (Exception e) {
         }
     }

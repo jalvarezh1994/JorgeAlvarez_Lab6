@@ -20,7 +20,6 @@ public class Persona {
     protected int Edad;
     protected String Nacionalidad;
     protected String LugarDeNacimiento;
-    protected DefaultTreeModel ArbolGenealogico;
     protected Color ColorDePiel;
     protected ArrayList<Familiar> Familiares = new ArrayList();
 
@@ -33,7 +32,6 @@ public class Persona {
         this.Nacionalidad = Nacionalidad;
         this.LugarDeNacimiento = LugarDeNacimiento;
         this.Nombre = Nombre;
-        this.ArbolGenealogico = ArbolGenealogico;
         this.ColorDePiel = ColorDePiel;
     }
 
@@ -75,14 +73,6 @@ public class Persona {
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
-    }
-
-    public DefaultTreeModel getArbolGenealogico() {
-        return ArbolGenealogico;
-    }
-
-    public void setArbolGenealogico(DefaultTreeModel ArbolGenealogico) {
-        this.ArbolGenealogico = ArbolGenealogico;
     }
 
     public Color getColorDePiel() {

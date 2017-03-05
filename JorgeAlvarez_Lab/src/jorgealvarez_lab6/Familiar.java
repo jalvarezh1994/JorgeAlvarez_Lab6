@@ -12,16 +12,21 @@ import java.util.ArrayList;
  *
  * @author ofici
  */
-class Familiar extends Persona{
-    
-    
+class Familiar {
+
+    protected String Nombre;
+    protected String ID;
+    protected int Edad;
+    protected String Nacionalidad;
+    protected String LugarDeNacimiento;
+    protected Color ColorDePiel;
+
     private Familiar Padre;
     private Persona Padre1;
     private ArrayList<Familiar> Hijos = new ArrayList();
 
     public Familiar() {
         super();
-        Padre1=Padre;
     }
 
     public Familiar(int Edad, String ID, String Nacionalidad, String LugarDeNacimiento, String Nombre, Color ColorDePiel, Familiar Padre) {
@@ -32,7 +37,6 @@ class Familiar extends Persona{
         this.Nombre = Nombre;
         this.ColorDePiel = ColorDePiel;
         this.Padre = Padre;
-        Padre1=Padre;
     }
 
     public int getEdad() {
