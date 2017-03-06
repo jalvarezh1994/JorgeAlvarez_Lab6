@@ -166,6 +166,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Reportes = new javax.swing.ButtonGroup();
         MenuInicio = new javax.swing.JPopupMenu();
         MenuAbrir = new javax.swing.JMenuItem();
+        AcercaDe = new javax.swing.JDialog();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         PrincipalTp = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -881,6 +886,52 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
         MenuInicio.add(MenuAbrir);
+
+        jLabel50.setText("Laboratorio 6 de Programación 2");
+
+        jLabel54.setText("5/3/2017");
+
+        jLabel55.setText("Creado y editado por Jorge Álvarez");
+
+        jButton1.setText("Aceptar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AcercaDeLayout = new javax.swing.GroupLayout(AcercaDe.getContentPane());
+        AcercaDe.getContentPane().setLayout(AcercaDeLayout);
+        AcercaDeLayout.setHorizontalGroup(
+            AcercaDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AcercaDeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AcercaDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AcercaDeLayout.createSequentialGroup()
+                        .addComponent(jLabel50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                        .addComponent(jLabel54))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AcercaDeLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1))
+                    .addGroup(AcercaDeLayout.createSequentialGroup()
+                        .addComponent(jLabel55)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        AcercaDeLayout.setVerticalGroup(
+            AcercaDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AcercaDeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AcercaDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(jLabel54))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2401,6 +2452,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         guardarTodo();
     }//GEN-LAST:event_GuardarComoMnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        AcercaDe.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     static void removerPersona(Persona p) {
         for (int i = 0; i < Personas.size(); i++) {
             if (Personas.get(i).equals(p)) {
@@ -2454,6 +2510,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AbrirMn;
+    private javax.swing.JDialog AcercaDe;
     private javax.swing.JMenuItem AcercaDeMn;
     private javax.swing.JButton ActualizarControlesModificarBt;
     private javax.swing.JButton AgregarAlCarroNuevaVentaBt;
@@ -2550,6 +2607,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> SeccionDeTrabajoAgregarJefeCb;
     private javax.swing.JTextField SueldoAgregarEmpleadoTf;
     private javax.swing.JTable TablaListar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2596,9 +2654,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
@@ -2674,8 +2735,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     static void cargarTodo() {
-        cargarGatos();
-        cargarBaleadas();
+        try {
+            cargarGatos();
+        } catch (Exception e) {
+        }
+        try {
+            cargarBaleadas();
+        } catch (Exception e) {
+        }
+
+        for (Gato Gato1 : Gatos) {
+            Articulos.add(Gato1);
+        }
+        for (Baleada Baleada1 : Baleadas) {
+            Baleadas.add(Baleada1);
+        }
+        try {
+            cargarClientes();
+        } catch (Exception e) {
+        }
+        try {
+            cargarEmpleados();
+        } catch (Exception e) {
+        }
+        try {
+            cargarJefes();
+        } catch (Exception e) {
+        }
+        try {
+            cargarVentas();
+        } catch (Exception e) {
+        }
     }
 
     static void guardarJefes() {
@@ -2686,21 +2776,68 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     + t.getLugarDeNacimiento() + ","
                     + t.getNacionalidad() + ","
                     + t.getNombre() + ","
-                    + t.getColorDePiel() + ","
+                    + t.getColorDePiel().getRed() + ","
+                    + t.getColorDePiel().getGreen() + ","
+                    + t.getColorDePiel().getBlue() + ","
                     + t.getEdad() + ","
-                    + t.getGananciaTotal() + ","
                     + t.getSeccionDeTrabajo() + ","
+                    + t.getGananciaTotal() + ","
                     + t.getClientesAtendidos() + ",";
-            for (Empleado t1 : t.getEmpleados()) {
+            for (Familiar t1 : t.getFamiliares()) {
                 texto += t1.getID() + "*";
             }
             texto += ",";
-            for (Familiar t1 : t.getFamiliares()) {
+            for (Empleado t1 : t.getEmpleados()) {
                 texto += t1.getID() + "*";
             }
             texto += ";";
         }
         escribirArchivo("Jefes", texto);
+    }
+
+    static void cargarJefes() {
+        Jefes.clear();
+        Scanner sc = new Scanner(leerArchivo("Jefes"));
+        sc.useDelimiter(";");
+        while (sc.hasNext()) {
+            String t = sc.next();
+            Scanner s2 = new Scanner(t);
+            s2.useDelimiter(",");
+            Jefes.add(new Jefe());
+            int pos = Jefes.size() - 1;
+            Jefes.get(pos).setID(sc.next());
+            Jefes.get(pos).setLugarDeNacimiento(sc.next());
+            Jefes.get(pos).setNacionalidad(sc.next());
+            Jefes.get(pos).setNombre(sc.next());
+            Jefes.get(pos).setColorDePiel(new Color(sc.nextInt(), sc.nextInt(), sc.nextInt()));
+            Jefes.get(pos).setEdad(sc.nextInt());
+            Jefes.get(pos).setSeccionDeTrabajo(sc.next());
+            Jefes.get(pos).setGananciaTotal(sc.nextFloat());
+            Jefes.get(pos).setClientesAtendidos(sc.nextInt());
+            Scanner s3 = new Scanner(s2.next());
+            s3.useDelimiter("*");
+            while (s3.hasNext()) {
+                Jefes.get(pos).getFamiliares().add(new Familiar());
+                Jefes.get(pos).getFamiliares().get(
+                        Jefes.get(pos).getFamiliares().size() - 1).setID(s3.next());
+            }
+            Scanner s4 = new Scanner(s2.next());
+            s4.useDelimiter("*");
+            while (s4.hasNext()) {
+                Jefes.get(pos).getEmpleados().add(new Empleado());
+                Jefes.get(pos).getEmpleados().get(
+                        Jefes.get(pos).getEmpleados().size() - 1).setID(s4.next());
+            }
+        }
+        for (Jefe e : Jefes) {
+            for (Familiar f1 : e.getFamiliares()) {
+                for (Familiar f2 : Familiares) {
+                    if (f1.getID().equalsIgnoreCase(f2.getID())) {
+                        f1 = f2;
+                    }
+                }
+            }
+        }
     }
 
     static void guardarEmpleados() {
@@ -2711,16 +2848,61 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     + t.getLugarDeNacimiento() + ","
                     + t.getNacionalidad() + ","
                     + t.getNombre() + ","
-                    + t.getColorDePiel() + ","
+                    + t.getColorDePiel().getRed() + ","
+                    + t.getColorDePiel().getGreen() + ","
+                    + t.getColorDePiel().getBlue() + ","
                     + t.getEdad() + ","
                     + t.getSeccionDeTrabajo() + ","
                     + t.getHoraDeLlegada() + ","
                     + t.getHoraDeSalida() + ","
                     + t.getSueldo() + ","
                     + t.getEstado() + ",";
+            for (Familiar t1 : t.getFamiliares()) {
+                texto += t1.getID() + "*";
+            }
             texto += ";";
         }
         escribirArchivo("Empleados", texto);
+    }
+
+    static void cargarEmpleados() {
+        Empleados.clear();
+        Scanner sc = new Scanner(leerArchivo("Empleados"));
+        sc.useDelimiter(";");
+        while (sc.hasNext()) {
+            String t = sc.next();
+            Scanner s2 = new Scanner(t);
+            s2.useDelimiter(",");
+            Empleados.add(new Empleado());
+            int pos = Empleados.size() - 1;
+            Empleados.get(pos).setID(sc.next());
+            Empleados.get(pos).setLugarDeNacimiento(sc.next());
+            Empleados.get(pos).setNacionalidad(sc.next());
+            Empleados.get(pos).setNombre(sc.next());
+            Empleados.get(pos).setColorDePiel(new Color(sc.nextInt(), sc.nextInt(), sc.nextInt()));
+            Empleados.get(pos).setEdad(sc.nextInt());
+            Empleados.get(pos).setSeccionDeTrabajo(sc.next());
+            Empleados.get(pos).setHoraDeLlegada(sc.nextInt());
+            Empleados.get(pos).setHoraDeSalida(sc.nextInt());
+            Empleados.get(pos).setSueldo(sc.nextFloat());
+            Empleados.get(pos).setEstado(sc.next());
+            Scanner s3 = new Scanner(sc.next());
+            s3.useDelimiter("*");
+            while (s3.hasNext()) {
+                Empleados.get(pos).getFamiliares().add(new Familiar());
+                Empleados.get(pos).getFamiliares().get(
+                        Empleados.get(pos).getFamiliares().size() - 1).setID(s3.next());
+            }
+        }
+        for (Empleado e : Empleados) {
+            for (Familiar f1 : e.getFamiliares()) {
+                for (Familiar f2 : Familiares) {
+                    if (f1.getID().equalsIgnoreCase(f2.getID())) {
+                        f1 = f2;
+                    }
+                }
+            }
+        }
     }
 
     static void guardarClientes() {
@@ -2733,12 +2915,58 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     + t.getNombre() + ","
                     + t.getColorDePiel() + ","
                     + t.getEdad() + ",";
+            for (Familiar f : t.getFamiliares()) {
+                texto += f.getID() + "*";
+            }
+            texto += ",";
             for (Venta o : t.getOrdenes()) {
                 texto += o.getID() + "*";
             }
             texto += ";";
         }
         escribirArchivo("Clientes", texto);
+    }
+
+    static void cargarClientes() {
+        Clientes.clear();
+        Scanner sc = new Scanner(leerArchivo("Clientes"));
+        sc.useDelimiter(";");
+        while (sc.hasNext()) {
+            String t = sc.next();
+            Scanner s2 = new Scanner(t);
+            s2.useDelimiter(",");
+            Clientes.add(new Cliente());
+            int pos = Clientes.size() - 1;
+            Clientes.get(pos).setID(sc.next());
+            Clientes.get(pos).setLugarDeNacimiento(sc.next());
+            Clientes.get(pos).setNacionalidad(sc.next());
+            Clientes.get(pos).setNombre(sc.next());
+            Clientes.get(pos).setColorDePiel(new Color(sc.nextInt(), sc.nextInt(), sc.nextInt()));
+            Clientes.get(pos).setEdad(sc.nextInt());
+            Scanner s3 = new Scanner(sc.next());
+            s3.useDelimiter("*");
+            while (s3.hasNext()) {
+                Clientes.get(pos).getFamiliares().add(new Familiar());
+                Clientes.get(pos).getFamiliares().get(
+                        Clientes.get(pos).getFamiliares().size() - 1).setID(s3.next());
+            }
+            Scanner s4 = new Scanner(s2.next());
+            s4.useDelimiter("*");
+            while (s4.hasNext()) {
+                Clientes.get(pos).getOrdenes().add(new Venta());
+                Clientes.get(pos).getOrdenes().get(
+                        Clientes.get(pos).getOrdenes().size() - 1).setID(s4.nextInt());
+            }
+        }
+        for (Cliente e : Clientes) {
+            for (Familiar f1 : e.getFamiliares()) {
+                for (Familiar f2 : Familiares) {
+                    if (f1.getID().equalsIgnoreCase(f2.getID())) {
+                        f1 = f2;
+                    }
+                }
+            }
+        }
     }
 
     static void guardarFamiliares() {
@@ -2857,9 +3085,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     += t.getID() + ","
                     + t.getClienteDeVenta().getID() + ","
                     + t.getAtendente().getID() + ","
-                    + t.getFechaDeLaOrden().getDay() + ","
+                    + t.getFechaDeLaOrden().getYear() + ","
                     + t.getFechaDeLaOrden().getMonth() + ","
-                    + t.getFechaDeLaOrden().getYear() + ",";
+                    + t.getFechaDeLaOrden().getDate() + ",";
             for (Articulo a : t.getArticulos()) {
                 texto += a.getID() + "*";
             }
@@ -2884,16 +3112,41 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             Ventas.get(pos).setAtendente(new Empleado());
             Ventas.get(pos).getAtendente().setID(s2.next());
             Ventas.get(pos).setFechaDeLaOrden(
-                    new Date(s2.nextInt(),s2.nextInt(),s2.nextInt()));
-            
-            Scanner s3=new Scanner(s2.next());
+                    new Date(s2.nextInt(), s2.nextInt(), s2.nextInt()));
+
+            Scanner s3 = new Scanner(s2.next());
             s3.useDelimiter("*");
-            
+            while (s3.hasNext()) {
+                Ventas.get(pos).getArticulos().add(
+                        new Articulo());
+                Ventas.get(pos).getArticulos().get(Articulos.size() - 1).
+                        setID(s2.nextInt());
+            }
+
             Ventas.get(pos).setTotal();
             Ventas.get(pos).setCantidadDeArticulos();
         }
+        for (Venta v : Ventas) {
+            for (Empleado e : Empleados) {
+                if (v.getAtendente().getID().equalsIgnoreCase(e.getID())) {
+                    v.setAtendente(e);
+                }
+            }
+            for (Cliente c : Clientes) {
+                if (v.getClienteDeVenta().getID().equalsIgnoreCase(c.getID())) {
+                    v.setClienteDeVenta(c);
+                }
+            }
+            for (Articulo a : v.getArticulos()) {
+                for (Articulo a1 : Articulos) {
+                    if (a.getID() == a1.getID()) {
+                        a = a1;
+                    }
+                }
+            }
+        }
     }
-    
+
     static void escribirArchivo(String nombreDeArchivo, String texto) {
         try {
             String carpeta = "";
@@ -2917,5 +3170,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } catch (Exception e) {
         }
         return texto;
+    }
+
+    static DefaultTreeModel arbol(Persona p) {
+        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(p);
+        DefaultTreeModel modeloArbol = new DefaultTreeModel(raiz);
+        for (Familiar fam : p.getFamiliares()) {
+            DefaultMutableTreeNode nodo=new DefaultMutableTreeNode(arbolRecursivo(fam));
+            raiz.add(nodo);
+        }
+        return modeloArbol;
+    }
+
+    static DefaultMutableTreeNode arbolRecursivo(Familiar f) {
+        DefaultMutableTreeNode n = new DefaultMutableTreeNode(f);
+        for (Familiar f2 : Familiares) {
+            if (f.equals(f2.getPadre())) {
+                n.add(arbolRecursivo(f2));
+            } else {
+                //n.add(new DefaultMutableTreeNode(f2));
+            }
+        }
+        return n;
     }
 }
