@@ -11,8 +11,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JColorChooser;
@@ -1827,6 +1829,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AgregarGato, "Algo salió mal con la altura");
         }
+        Gatos.get(pos).setID(Articulos.size() + 1);
         Articulos.add((Gato) Gatos.get(pos));
         JOptionPane.showMessageDialog(AgregarGato, "¡Agregado!");
         AgregarGato.dispose();
@@ -1853,6 +1856,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(AgregarBaleada, "Hubo un problema con el precio");
         }
         ((Baleada) Baleadas.get(pos)).setIngredientes(IngredientesTemporal);
+        Baleadas.get(pos).setID(Articulos.size() + 1);
         Articulos.add((Baleada) Baleadas.get(pos));
         JOptionPane.showMessageDialog(AgregarBaleada, "¡Agregado!");
         AgregarBaleada.dispose();
@@ -2276,6 +2280,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         CarpetaGuardada = archivo;
         yaGuardado = true;
         JOptionPane.showMessageDialog(this, "Se ha abierto la carpeta: \n" + CarpetaGuardada);
+        cargarTodo();
     }//GEN-LAST:event_MenuAbrirActionPerformed
 
     private void AbrirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirMnActionPerformed
@@ -2291,6 +2296,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             modeloArbol.setRoot(raiz);
             ArbolInicio.setModel(modeloArbol);
         }
+        leerArchivo("Jefes");
     }//GEN-LAST:event_AbrirMnActionPerformed
 
     private void ColorDePielAgregarEmpleadoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorDePielAgregarEmpleadoBtActionPerformed
@@ -2662,6 +2668,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         guardarJefes();
         guardarEmpleados();
         guardarClientes();
+        guardarFamiliares();
+        guardarBaleadas();
+        guardarGatos();
+    }
+
+    static void cargarTodo() {
+        cargarGatos();
+        cargarBaleadas();
     }
 
     static void guardarJefes() {
@@ -2735,14 +2749,151 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     + t.getLugarDeNacimiento() + ","
                     + t.getNacionalidad() + ","
                     + t.getNombre() + ","
-                    + t.getColorDePiel() + ","
-                    + t.getEdad() + ",";
-                    
+                    + t.getColorDePiel().getRed() + ","
+                    + t.getColorDePiel().getGreen() + ","
+                    + t.getColorDePiel().getBlue() + ","
+                    + t.getEdad() + ","
+                    + t.getPadre().getID();
             texto += ";";
         }
-        escribirArchivo("Clientes", texto);
+        escribirArchivo("Familiares", texto);
     }
 
+    static void cargarFamiliares() {
+        Familiares.clear();
+        Scanner sc = new Scanner(leerArchivo("Familiares"));
+        sc.useDelimiter(";");
+        while (sc.hasNext()) {
+            String t = sc.next();
+            Scanner s2 = new Scanner(t);
+            s2.useDelimiter(",");
+            Familiares.add(new Familiar());
+            int pos = Familiares.size() - 1;
+            Familiares.get(pos).setID(s2.next());
+            Familiares.get(pos).setLugarDeNacimiento(s2.next());
+            Familiares.get(pos).setNacionalidad(s2.next());
+            Familiares.get(pos).setNombre(s2.next());
+            Familiares.get(pos).setColorDePiel(
+                    new Color(Integer.parseInt(s2.next()),
+                            Integer.parseInt(s2.next()),
+                            Integer.parseInt(s2.next())));
+            Familiares.get(pos).setEdad(Integer.parseInt(s2.next()));
+            Familiares.get(pos).setPadre(new Familiar());
+            Familiares.get(pos).getPadre().setID(s2.next());
+        }
+        for (Familiar f1 : Familiares) {
+            for (Familiar f2 : Familiares) {
+                if (f1.getPadre().getID().equalsIgnoreCase(f2.getPadre().getID())) {
+                    f1.setPadre(f2);
+                }
+            }
+        }
+    }
+
+    static void guardarGatos() {
+        String texto = "";
+        for (Gato t : Gatos) {
+            texto
+                    += t.getPrecio() + ","
+                    + t.getPeso() + ","
+                    + t.getAltura() + ",";
+            texto += ";";
+        }
+        escribirArchivo("Gatos", texto);
+    }
+
+    static void cargarGatos() {
+        Gatos.clear();
+        Scanner sc = new Scanner(leerArchivo("Gatos"));
+        sc.useDelimiter(";");
+        while (sc.hasNext()) {
+            String t = sc.next();
+            Scanner s2 = new Scanner(t);
+            s2.useDelimiter(",");
+            Gatos.add(new Gato());
+            int pos = Gatos.size() - 1;
+            Gatos.get(pos).setPrecio(Float.parseFloat(s2.next()));
+            Gatos.get(pos).setPeso(Float.parseFloat(s2.next()));
+            Gatos.get(pos).setAltura(Float.parseFloat(s2.next()));
+        }
+    }
+
+    static void guardarBaleadas() {
+        String texto = "";
+        for (Baleada t : Baleadas) {
+            texto
+                    += t.getPrecio() + ",";
+            for (String i : t.getIngredientes()) {
+                texto += i + "*";
+            }
+            texto += ";";
+        }
+        escribirArchivo("Baleadas", texto);
+    }
+
+    static void cargarBaleadas() {
+        Baleadas.clear();
+        Scanner sc = new Scanner(leerArchivo("Baleadas"));
+        sc.useDelimiter(";");
+        while (sc.hasNext()) {
+            String t = sc.next();
+            Scanner s2 = new Scanner(t);
+            s2.useDelimiter(",");
+            Baleadas.add(new Baleada());
+            int pos = Baleadas.size() - 1;
+            Baleadas.get(pos).setPrecio(Float.parseFloat(s2.next()));
+            Scanner s3 = new Scanner(s2.next());
+            s3.useDelimiter("*");
+            while (s3.hasNext()) {
+                Baleadas.get(pos).getIngredientes().add(s3.next());
+            }
+        }
+    }
+
+    static void guardarVentas() {
+        String texto = "";
+        for (Venta t : Ventas) {
+            texto
+                    += t.getID() + ","
+                    + t.getClienteDeVenta().getID() + ","
+                    + t.getAtendente().getID() + ","
+                    + t.getFechaDeLaOrden().getDay() + ","
+                    + t.getFechaDeLaOrden().getMonth() + ","
+                    + t.getFechaDeLaOrden().getYear() + ",";
+            for (Articulo a : t.getArticulos()) {
+                texto += a.getID() + "*";
+            }
+            texto += ";";
+        }
+        escribirArchivo("Ventas", texto);
+    }
+
+    static void cargarVentas() {
+        Ventas.clear();
+        Scanner sc = new Scanner(leerArchivo("Ventas"));
+        sc.useDelimiter(";");
+        while (sc.hasNext()) {
+            String t = sc.next();
+            Scanner s2 = new Scanner(t);
+            s2.useDelimiter(",");
+            Ventas.add(new Venta());
+            int pos = Ventas.size() - 1;
+            Ventas.get(pos).setID(s2.nextInt());
+            Ventas.get(pos).setClienteDeVenta(new Cliente());
+            Ventas.get(pos).getClienteDeVenta().setID(s2.next());
+            Ventas.get(pos).setAtendente(new Empleado());
+            Ventas.get(pos).getAtendente().setID(s2.next());
+            Ventas.get(pos).setFechaDeLaOrden(
+                    new Date(s2.nextInt(),s2.nextInt(),s2.nextInt()));
+            
+            Scanner s3=new Scanner(s2.next());
+            s3.useDelimiter("*");
+            
+            Ventas.get(pos).setTotal();
+            Ventas.get(pos).setCantidadDeArticulos();
+        }
+    }
+    
     static void escribirArchivo(String nombreDeArchivo, String texto) {
         try {
             String carpeta = "";
@@ -2755,15 +2906,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }
 
-    static void cargarTodo() {
+    static String leerArchivo(String Nombre) {
         String archivo = "";
-        archivo += CarpetaGuardada + "/Jefes.txt";
+        String texto = "";
+        archivo += CarpetaGuardada + "/" + Nombre + ".txt";
         try {
             FileReader fr = new FileReader(archivo);
             BufferedReader br = new BufferedReader(fr);
-            String Texto = br.toString();
-            System.out.println(Texto);
+            texto = br.readLine();
         } catch (Exception e) {
         }
+        return texto;
     }
 }

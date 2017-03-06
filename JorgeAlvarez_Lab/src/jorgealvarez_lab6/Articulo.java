@@ -11,7 +11,8 @@ package jorgealvarez_lab6;
  */
 class Articulo {
 
-    float Precio;
+    protected int ID;
+    protected float Precio;
 
     public Articulo() {
     }
@@ -26,6 +27,14 @@ class Articulo {
 
     public void setPrecio(float Precio) {
         this.Precio = Precio;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     @Override
