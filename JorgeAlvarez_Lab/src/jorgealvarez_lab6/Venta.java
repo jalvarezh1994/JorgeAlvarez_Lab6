@@ -14,6 +14,7 @@ import java.util.Date;
  */
 class Venta {
 
+    private int ID;
     private ArrayList<Articulo> Articulos = new ArrayList();
     private Cliente ClienteDeVenta;
     private Empleado Atendente;
@@ -69,7 +70,7 @@ class Venta {
     }
 
     public void setTotal() {
-        this.Total=0;
+        this.Total = 0;
         for (int i = 0; i < Articulos.size(); i++) {
             this.Total += Articulos.get(i).getPrecio();
         }
@@ -81,6 +82,14 @@ class Venta {
 
     public void setFechaDeLaOrden(Date FechaDeLaOrden) {
         this.FechaDeLaOrden = FechaDeLaOrden;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     @Override

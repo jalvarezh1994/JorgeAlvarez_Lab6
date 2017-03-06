@@ -22,8 +22,7 @@ class Familiar {
     protected Color ColorDePiel;
 
     private Familiar Padre;
-    private Persona Padre1;
-    private ArrayList<Familiar> Hijos = new ArrayList();
+    //private ArrayList<Familiar> Hijos = new ArrayList();
 
     public Familiar() {
         super();
@@ -93,14 +92,6 @@ class Familiar {
 
     public void setPadre(Familiar Padre) {
         this.Padre = Padre;
-    }
-
-    public ArrayList<Familiar> getHijos() {
-        return Hijos;
-    }
-
-    public void setHijos(ArrayList<Familiar> Hijos) {
-        this.Hijos = Hijos;
     }
 
     @Override

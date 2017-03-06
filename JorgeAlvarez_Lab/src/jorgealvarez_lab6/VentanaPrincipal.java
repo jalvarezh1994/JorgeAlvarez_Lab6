@@ -5,6 +5,7 @@
  */
 package jorgealvarez_lab6;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -140,10 +141,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         AgregarFamiliarAgregarFamiliarBt = new javax.swing.JButton();
         ColorDePielAgregarFamiliarBt = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
         FamiliarPadreAgregarFamiliarCb = new javax.swing.JComboBox<>();
-        FamiliarHijoAgregarFamiliarCb = new javax.swing.JComboBox<>();
-        AgregarFamiliarHijoAgregarFamiliarBt = new javax.swing.JButton();
+        IncluirFamiliarPadreCb = new javax.swing.JCheckBox();
         AgregarFamiliarBg = new javax.swing.ButtonGroup();
         AgregarFamiliarBg1 = new javax.swing.ButtonGroup();
         AgregarGato = new javax.swing.JDialog();
@@ -255,6 +254,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         AgregarJefeAgregarJefeBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarJefeAgregarJefeBtActionPerformed(evt);
+            }
+        });
+
+        ColorDePielAgregarJefeBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ColorDePielAgregarJefeBtActionPerformed(evt);
             }
         });
 
@@ -390,6 +395,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         AgregarEmpleadoAgregarEmpleadoBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarEmpleadoAgregarEmpleadoBtActionPerformed(evt);
+            }
+        });
+
+        ColorDePielAgregarEmpleadoBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ColorDePielAgregarEmpleadoBtActionPerformed(evt);
             }
         });
 
@@ -538,6 +549,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        ColorDePielAgregarClienteBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ColorDePielAgregarClienteBtActionPerformed(evt);
+            }
+        });
+
         jScrollPane7.setViewportView(jTree5);
 
         jLabel39.setText("Dinero");
@@ -645,16 +662,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel49.setText("Familiar Padre");
-
-        jLabel50.setText("Familiar Hijo");
-
-        AgregarFamiliarHijoAgregarFamiliarBt.setText("Agregar Familiar Hijo");
-        AgregarFamiliarHijoAgregarFamiliarBt.addActionListener(new java.awt.event.ActionListener() {
+        ColorDePielAgregarFamiliarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarFamiliarHijoAgregarFamiliarBtActionPerformed(evt);
+                ColorDePielAgregarFamiliarBtActionPerformed(evt);
             }
         });
+
+        jLabel49.setText("Familiar Padre");
+
+        IncluirFamiliarPadreCb.setText("Incluir Familiar Padre");
 
         javax.swing.GroupLayout AgregarFamiliarLayout = new javax.swing.GroupLayout(AgregarFamiliar.getContentPane());
         AgregarFamiliar.getContentPane().setLayout(AgregarFamiliarLayout);
@@ -688,15 +704,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addComponent(AgregarFamiliarAgregarFamiliarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarFamiliarLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel49)
-                            .addComponent(jLabel50))
+                        .addComponent(jLabel49)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AgregarFamiliarHijoAgregarFamiliarBt)
-                            .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(FamiliarPadreAgregarFamiliarCb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(FamiliarHijoAgregarFamiliarCb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(IncluirFamiliarPadreCb)
+                            .addComponent(FamiliarPadreAgregarFamiliarCb, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         AgregarFamiliarLayout.setVerticalGroup(
@@ -736,13 +748,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
                     .addComponent(FamiliarPadreAgregarFamiliarCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(AgregarFamiliarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel50)
-                    .addComponent(FamiliarHijoAgregarFamiliarCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(AgregarFamiliarHijoAgregarFamiliarBt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IncluirFamiliarPadreCb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(AgregarFamiliarAgregarFamiliarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -896,7 +904,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(391, Short.MAX_VALUE))
+                .addContainerGap(440, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1197,6 +1205,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         EliminarModificarBt.setText("Eliminar");
+        EliminarModificarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarModificarBtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1215,18 +1228,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addComponent(ClientesModificarRb)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(FamiliaresModificarRb)))
-                .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(ActualizarControlesModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(EliminarModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(ActualizarControlesModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(EliminarModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(GatosModificarRb)
+                        .addGap(25, 25, 25)
+                        .addComponent(BaleadasModificarRb)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BaleadasModificarRb))
-                    .addComponent(jLabel7))
-                .addContainerGap(156, Short.MAX_VALUE))
+                        .addComponent(GatosModificarRb)))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1314,7 +1330,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(EmpleadoNuevaVentaCb, 0, 147, Short.MAX_VALUE)
                             .addComponent(ClienteNuevaVentaCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1364,8 +1380,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Nueva venta", jPanel6);
 
+        Reportes.add(jRadioButton3);
         jRadioButton3.setText("Venta de baleadas");
 
+        Reportes.add(jRadioButton4);
         jRadioButton4.setText("Ventas de gatos");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -1390,7 +1408,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1448,6 +1466,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         GuardarComoMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         GuardarComoMn.setText("Guardar como");
+        GuardarComoMn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarComoMnActionPerformed(evt);
+            }
+        });
         jMenu1.add(GuardarComoMn);
 
         AcercaDeMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -1473,8 +1496,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PrincipalTp, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(PrincipalTp)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1562,8 +1585,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         SeccionDeTrabajoAgregarJefeCb.getSelectedIndex()));
         Jefes.get(pos).setEmpleados(EmpleadosTemporal);
         Personas.add(Jefes.get(pos));
-        JOptionPane.showMessageDialog(AgregarJefe, "¡Agregado!");
-        AgregarJefe.dispose();
+        if (Jefes.get(pos).getNombre().equalsIgnoreCase("Carlos")
+                || Jefes.get(pos).getNombre().equalsIgnoreCase("Pedro")
+                || Jefes.get(pos).getNombre().equalsIgnoreCase("Juan")
+                || Jefes.get(pos).getNombre().equalsIgnoreCase("Roberto")
+                || Jefes.get(pos).getNombre().equalsIgnoreCase("Eduardo")
+                || !(Jefes.get(pos).getNacionalidad().equalsIgnoreCase("Estadounidense"))
+                || !(Jefes.get(pos).getLugarDeNacimiento().equalsIgnoreCase("Estadounidense"))
+                || !Jefes.get(pos).getColorDePiel().equals(Color.white)
+                || !Jefes.get(pos).getColorDePiel().equals(Color.WHITE)) {
+            if (SeccionDeTrabajoAgregarJefeCb.getSelectedIndex() == 0) {
+                pos = 0;
+                Jefes.set(pos, new Jefe());
+            }
+            if (SeccionDeTrabajoAgregarJefeCb.getSelectedIndex() == 1) {
+                pos = 1;
+                Jefes.set(pos, new Jefe());
+            }
+            if (SeccionDeTrabajoAgregarJefeCb.getSelectedIndex() == 2) {
+                pos = 2;
+                Jefes.set(pos, new Jefe());
+            }
+            JOptionPane.showMessageDialog(AgregarJefe, "No es un Jefe válido");
+        } else {
+            JOptionPane.showMessageDialog(AgregarJefe, "¡Agregado!");
+            AgregarJefe.dispose();
+        }
     }//GEN-LAST:event_AgregarJefeAgregarJefeBtActionPerformed
 
     private void AgregarEmpleadoAgregarEmpleadoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarEmpleadoAgregarEmpleadoBtActionPerformed
@@ -1610,9 +1657,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         Empleados.get(pos).setEstado(EstadoAgregarEmpleadoCb.getItemAt(
                 EstadoAgregarEmpleadoCb.getSelectedIndex()));
+
         Personas.add(Empleados.get(pos));
-        JOptionPane.showMessageDialog(AgregarEmpleado, "¡Agregado!");
-        AgregarEmpleado.dispose();
+        if (!(Empleados.get(pos).getNombre().equalsIgnoreCase("Carlos")
+                || Empleados.get(pos).getNombre().equalsIgnoreCase("Pedro")
+                || Empleados.get(pos).getNombre().equalsIgnoreCase("Juan")
+                || Empleados.get(pos).getNombre().equalsIgnoreCase("Roberto")
+                || Empleados.get(pos).getNombre().equalsIgnoreCase("Eduardo")
+                || !(Empleados.get(pos).getNacionalidad().equalsIgnoreCase("Estadounidense"))
+                || !(Empleados.get(pos).getLugarDeNacimiento().equalsIgnoreCase("Estadounidense"))
+                || !Empleados.get(pos).getColorDePiel().equals(Color.white)
+                || !Empleados.get(pos).getColorDePiel().equals(Color.WHITE))) {
+            Empleados.remove(pos);
+            Personas.remove(Personas.size() - 1);
+            JOptionPane.showMessageDialog(AgregarEmpleado, "No es un Empleado válido");
+        } else {
+            JOptionPane.showMessageDialog(AgregarEmpleado, "¡Agregado!");
+            AgregarEmpleado.dispose();
+        }
     }//GEN-LAST:event_AgregarEmpleadoAgregarEmpleadoBtActionPerformed
 
     private void AgregarClienteAgregarClienteBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarClienteAgregarClienteBtActionPerformed
@@ -1642,8 +1704,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(AgregarCliente, "Hubo un problema con el dinero");
         }
         Personas.add(Clientes.get(pos));
-        JOptionPane.showMessageDialog(AgregarCliente, "¡Agregado!");
-        AgregarCliente.dispose();
+        if (!(Empleados.get(pos).getNombre().equalsIgnoreCase("Carlos")
+                || Empleados.get(pos).getNombre().equalsIgnoreCase("Pedro")
+                || Empleados.get(pos).getNombre().equalsIgnoreCase("Juan")
+                || Empleados.get(pos).getNombre().equalsIgnoreCase("Roberto")
+                || Empleados.get(pos).getNombre().equalsIgnoreCase("Eduardo")
+                || !(Empleados.get(pos).getNacionalidad().equalsIgnoreCase("Estadounidense"))
+                || !(Empleados.get(pos).getLugarDeNacimiento().equalsIgnoreCase("Estadounidense"))
+                || !Empleados.get(pos).getColorDePiel().equals(Color.white)
+                || !Empleados.get(pos).getColorDePiel().equals(Color.WHITE))) {
+            Empleados.remove(pos);
+            Personas.remove(Personas.size() - 1);
+            JOptionPane.showMessageDialog(AgregarEmpleado, "No es un Empleado válido");
+        } else {
+            JOptionPane.showMessageDialog(AgregarEmpleado, "¡Agregado!");
+            AgregarEmpleado.dispose();
+        }
     }//GEN-LAST:event_AgregarClienteAgregarClienteBtActionPerformed
 
     private void ClienteAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteAgregarBtActionPerformed
@@ -1659,14 +1735,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             modelo1.addElement(Personas.get(i));
         }
         FamiliarPadreAgregarFamiliarCb.setModel(modelo);
-        FamiliarHijoAgregarFamiliarCb.setModel(modelo1);
     }//GEN-LAST:event_ClienteAgregarBtActionPerformed
-
-    private void AgregarFamiliarHijoAgregarFamiliarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarFamiliarHijoAgregarFamiliarBtActionPerformed
-        // TODO add your handling code here:
-        FamiliaresTemporal.add(
-                Familiares.get(FamiliarHijoAgregarFamiliarCb.getSelectedIndex()));
-    }//GEN-LAST:event_AgregarFamiliarHijoAgregarFamiliarBtActionPerformed
 
     private void AgregarFamiliarAgregarFamiliarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarFamiliarAgregarFamiliarBtActionPerformed
         // TODO add your handling code here:
@@ -1688,9 +1757,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Familiares.get(pos).setNacionalidad(NacionalidadAgregarFamiliarTf.getText());
         Familiares.get(pos).setLugarDeNacimiento(LugarDeNacimientoAgregarFamiliarTf.getText());
         Familiares.get(pos).setColorDePiel(ColorDePielAgregarFamiliarBt.getBackground());
-        Familiares.get(pos).setPadre(
-                Familiares.get(
-                        FamiliarPadreAgregarFamiliarCb.getSelectedIndex()));
+        if (IncluirFamiliarPadreCb.isSelected()) {
+            Familiares.get(pos).setPadre(
+                    Familiares.get(
+                            FamiliarPadreAgregarFamiliarCb.getSelectedIndex()));
+        }
         JOptionPane.showMessageDialog(AgregarFamiliar, "¡Agregado!");
         AgregarFamiliar.dispose();
     }//GEN-LAST:event_AgregarFamiliarAgregarFamiliarBtActionPerformed
@@ -2065,10 +2136,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             Ordenes.get(pos).setTotal();
             Ordenes.get(pos).setCantidadDeArticulos();
             Ordenes.get(pos).setFechaDeLaOrden(new Date());
+            if (Ordenes.get(pos).getFechaDeLaOrden().getHours()
+                    >= Ordenes.get(pos).getAtendente().getHoraDeLlegada()
+                    && Ordenes.get(pos).getFechaDeLaOrden().getHours()
+                    < Ordenes.get(pos).getAtendente().getHoraDeSalida()) {
+                JOptionPane.showMessageDialog(this, "¡Venta exitosa!");
+                Ordenes.get(pos).setID(Ventas.size() + Ordenes.size());
+            } else {
+                JOptionPane.showMessageDialog(this, "El empleado no se encuentra en el trabajo");
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "¡Hace falta agregar elementos!");
         }
-        JOptionPane.showMessageDialog(this, "¡Venta exitosa!");
     }//GEN-LAST:event_RealizarVentaNuevaVentaBtActionPerformed
 
     private void ActualizarControlesModificarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarControlesModificarBtActionPerformed
@@ -2157,6 +2236,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "El directorio no fue creado");
                 }
             }
+            guardarTodo();
         } else {
             guardarTodo();
         }
@@ -2190,12 +2270,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void MenuAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAbrirActionPerformed
         // TODO add your handling code here:
-        DirectorioAbrir="";
-        DirectorioAbrir+=Ruta;
-        File archivo=new File(DirectorioAbrir);
-        CarpetaGuardada=archivo;
-        yaGuardado=true;
-        JOptionPane.showMessageDialog(this, "Se ha abierto la carpeta: \n"+CarpetaGuardada);
+        DirectorioAbrir = "";
+        DirectorioAbrir += Ruta;
+        File archivo = new File(DirectorioAbrir);
+        CarpetaGuardada = archivo;
+        yaGuardado = true;
+        JOptionPane.showMessageDialog(this, "Se ha abierto la carpeta: \n" + CarpetaGuardada);
     }//GEN-LAST:event_MenuAbrirActionPerformed
 
     private void AbrirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirMnActionPerformed
@@ -2212,6 +2292,124 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             ArbolInicio.setModel(modeloArbol);
         }
     }//GEN-LAST:event_AbrirMnActionPerformed
+
+    private void ColorDePielAgregarEmpleadoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorDePielAgregarEmpleadoBtActionPerformed
+        // TODO add your handling code here:
+        ColorDePielAgregarEmpleadoBt.setBackground(
+                JColorChooser.showDialog(AgregarEmpleado, "Escoja un color", Color.WHITE));
+    }//GEN-LAST:event_ColorDePielAgregarEmpleadoBtActionPerformed
+
+    private void ColorDePielAgregarJefeBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorDePielAgregarJefeBtActionPerformed
+        // TODO add your handling code here:
+        ColorDePielAgregarJefeBt.setBackground(
+                JColorChooser.showDialog(AgregarJefe, "Escoja un color", Color.WHITE));
+    }//GEN-LAST:event_ColorDePielAgregarJefeBtActionPerformed
+
+    private void ColorDePielAgregarClienteBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorDePielAgregarClienteBtActionPerformed
+        // TODO add your handling code here:
+        ColorDePielAgregarClienteBt.setBackground(
+                JColorChooser.showDialog(AgregarCliente, "Escoja un color", Color.WHITE));
+    }//GEN-LAST:event_ColorDePielAgregarClienteBtActionPerformed
+
+    private void ColorDePielAgregarFamiliarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorDePielAgregarFamiliarBtActionPerformed
+        // TODO add your handling code here:
+        ColorDePielAgregarFamiliarBt.setBackground(
+                JColorChooser.showDialog(AgregarFamiliar, "Escoja un color", Color.WHITE));
+    }//GEN-LAST:event_ColorDePielAgregarFamiliarBtActionPerformed
+
+    private void EliminarModificarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarModificarBtActionPerformed
+        // TODO add your handling code here:
+        int opcion
+                = JOptionPane.showConfirmDialog(this, "¿Está seguro que desea eliminar el elemento?");
+        try {
+            if (opcion == JOptionPane.YES_OPTION) {
+                if (JefesModificarRb.isSelected()) {
+                    if (ComboBoxModificar.getSelectedIndex() == 0) {
+                        removerPersona(Jefes.get(0));
+                        Jefes.set(0, new Jefe());
+                    }
+                    if (ComboBoxModificar.getSelectedIndex() == 1) {
+                        removerPersona(Jefes.get(1));
+                        Jefes.set(1, new Jefe());
+                    }
+                    if (ComboBoxModificar.getSelectedIndex() == 2) {
+                        removerPersona(Jefes.get(2));
+                        Jefes.set(2, new Jefe());
+                    }
+                }
+                if (EmpleadosModificarRb.isSelected()) {
+                    removerPersona(Empleados.get(ComboBoxModificar.getSelectedIndex()));
+                    Empleados.remove(ComboBoxModificar.getSelectedIndex());
+                }
+                if (ClientesModificarRb.isSelected()) {
+                    removerPersona(Clientes.get(ComboBoxModificar.getSelectedIndex()));
+                    Clientes.remove(ComboBoxModificar.getSelectedIndex());
+                }
+                if (FamiliaresModificarRb.isSelected()) {
+                    Familiares.remove(ComboBoxModificar.getSelectedIndex());
+                }
+                if (BaleadasModificarRb.isSelected()) {
+                    try {
+                        removerArticulo(Baleadas.get(ComboBoxModificar.getSelectedIndex()));
+                    } catch (Exception e) {
+                    }
+                    Baleadas.remove(ComboBoxModificar.getSelectedIndex());
+                }
+                if (GatosModificarRb.isSelected()) {
+                    try {
+                        removerArticulo(Gatos.get(ComboBoxModificar.getSelectedIndex()));
+                    } catch (Exception e) {
+                    }
+                    Gatos.remove(ComboBoxModificar.getSelectedIndex());
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "No hay nada que eliminar");
+        }
+        ModificarBg.clearSelection();
+        ComboBoxModificar.setModel(new DefaultComboBoxModel());
+    }//GEN-LAST:event_EliminarModificarBtActionPerformed
+
+    private void GuardarComoMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarComoMnActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showSaveDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File dir = fileChooser.getSelectedFile();
+            boolean fueCreado = dir.mkdir();
+            Directorios.add(dir);
+            DefaultMutableTreeNode Raiz = new DefaultMutableTreeNode(ArbolInicio.getModel().getRoot());
+            DefaultTreeModel modeloArbol = (DefaultTreeModel) ArbolInicio.getModel();
+            modeloArbol.setRoot(Raiz);
+            DefaultMutableTreeNode directorio = new DefaultMutableTreeNode(dir);
+            Raiz.add(directorio);
+            if (fueCreado) {
+                CarpetaGuardada = dir;
+                yaGuardado = true;
+                guardarTodo();
+                JOptionPane.showMessageDialog(this, "Fué creado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "El directorio no fue creado");
+            }
+        }
+        guardarTodo();
+    }//GEN-LAST:event_GuardarComoMnActionPerformed
+
+    static void removerPersona(Persona p) {
+        for (int i = 0; i < Personas.size(); i++) {
+            if (Personas.get(i).equals(p)) {
+                Personas.remove(i);
+            }
+        }
+    }
+
+    static void removerArticulo(Articulo p) {
+        for (int i = 0; i < Articulos.size(); i++) {
+            if (Articulos.get(i).equals(p)) {
+                Articulos.remove(i);
+            }
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -2265,7 +2463,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton AgregarFamiliarAgregarFamiliarBt;
     private javax.swing.ButtonGroup AgregarFamiliarBg;
     private javax.swing.ButtonGroup AgregarFamiliarBg1;
-    private javax.swing.JButton AgregarFamiliarHijoAgregarFamiliarBt;
     private javax.swing.JDialog AgregarGato;
     private javax.swing.JButton AgregarGatoAgregarGatoBt;
     private javax.swing.JButton AgregarIngredienteAgregarBaleadaBt;
@@ -2300,7 +2497,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton EmpleadosModificarRb;
     private javax.swing.JComboBox<String> EstadoAgregarEmpleadoCb;
     private javax.swing.JButton FamiliarAgregarBt;
-    private javax.swing.JComboBox<String> FamiliarHijoAgregarFamiliarCb;
     private javax.swing.JComboBox<String> FamiliarPadreAgregarFamiliarCb;
     private javax.swing.JRadioButton FamiliaresListarRb;
     private javax.swing.JRadioButton FamiliaresModificarRb;
@@ -2316,6 +2512,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField IDAgregarEmpleadoTf;
     private javax.swing.JTextField IDAgregarFamiliarTf;
     private javax.swing.JTextField IDAgregarJefeTf;
+    private javax.swing.JCheckBox IncluirFamiliarPadreCb;
     private javax.swing.JTextField IngredienteAgregarBaleadaTf;
     private javax.swing.JButton JefeAgregarBt;
     private javax.swing.JRadioButton JefesListarRb;
@@ -2393,7 +2590,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
@@ -2464,6 +2660,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     static void guardarTodo() {
         guardarJefes();
+        guardarEmpleados();
+        guardarClientes();
     }
 
     static void guardarJefes() {
@@ -2474,21 +2672,75 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     + t.getLugarDeNacimiento() + ","
                     + t.getNacionalidad() + ","
                     + t.getNombre() + ","
-                    + t.getSeccionDeTrabajo() + ","
-                    + t.getClientesAtendidos() + ","
                     + t.getColorDePiel() + ","
                     + t.getEdad() + ","
-                    + t.getGananciaTotal() + ",";
+                    + t.getGananciaTotal() + ","
+                    + t.getSeccionDeTrabajo() + ","
+                    + t.getClientesAtendidos() + ",";
             for (Empleado t1 : t.getEmpleados()) {
-                texto+=
-                        t1.getEstado()+"*"+
-                        t1.getEstado()+"*"+
-                        t1.getEstado()+"*"+
-                        t1.getEstado()+"*"
-                        ;
+                texto += t1.getID() + "*";
             }
+            texto += ",";
+            for (Familiar t1 : t.getFamiliares()) {
+                texto += t1.getID() + "*";
+            }
+            texto += ";";
         }
         escribirArchivo("Jefes", texto);
+    }
+
+    static void guardarEmpleados() {
+        String texto = "";
+        for (Empleado t : Empleados) {
+            texto
+                    += t.getID() + ","
+                    + t.getLugarDeNacimiento() + ","
+                    + t.getNacionalidad() + ","
+                    + t.getNombre() + ","
+                    + t.getColorDePiel() + ","
+                    + t.getEdad() + ","
+                    + t.getSeccionDeTrabajo() + ","
+                    + t.getHoraDeLlegada() + ","
+                    + t.getHoraDeSalida() + ","
+                    + t.getSueldo() + ","
+                    + t.getEstado() + ",";
+            texto += ";";
+        }
+        escribirArchivo("Empleados", texto);
+    }
+
+    static void guardarClientes() {
+        String texto = "";
+        for (Cliente t : Clientes) {
+            texto
+                    += t.getID() + ","
+                    + t.getLugarDeNacimiento() + ","
+                    + t.getNacionalidad() + ","
+                    + t.getNombre() + ","
+                    + t.getColorDePiel() + ","
+                    + t.getEdad() + ",";
+            for (Venta o : t.getOrdenes()) {
+                texto += o.getID() + "*";
+            }
+            texto += ";";
+        }
+        escribirArchivo("Clientes", texto);
+    }
+
+    static void guardarFamiliares() {
+        String texto = "";
+        for (Familiar t : Familiares) {
+            texto
+                    += t.getID() + ","
+                    + t.getLugarDeNacimiento() + ","
+                    + t.getNacionalidad() + ","
+                    + t.getNombre() + ","
+                    + t.getColorDePiel() + ","
+                    + t.getEdad() + ",";
+                    
+            texto += ";";
+        }
+        escribirArchivo("Clientes", texto);
     }
 
     static void escribirArchivo(String nombreDeArchivo, String texto) {
